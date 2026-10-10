@@ -1,0 +1,259 @@
+# Source of truth for BigQuery table naming conventions, domain IDs, and agent IDs.
+# BigQuery dataset: physical_ai_ent_agents
+# Table naming convention: <domain_id>_<agent_id>_<logical_table_stem>
+# Both domain_id and agent_id must be exactly 4 lowercase ASCII letters.
+
+dataset: physical_ai_ent_agents
+
+domains:
+  robot_data_ops:
+    domain_id: rdop
+    display_name: Robot Data Operations & Teleoperation
+  policy_eval_diagnostics:
+    domain_id: pedi
+    display_name: Policy Evaluation & Failure Diagnostics
+  sim_to_real_synthetic:
+    domain_id: strs
+    display_name: Sim-to-Real & Synthetic Data Pipeline
+  fleet_telemetry_maintenance:
+    domain_id: ftpm
+    display_name: Fleet Telemetry & Predictive Maintenance
+  safety_compliance_release:
+    domain_id: scpr
+    display_name: Safety, Compliance & Policy Release
+  human_robot_interaction:
+    domain_id: hrix
+    display_name: Human-Robot Interaction & Agents
+  data_labeling_curation:
+    domain_id: dlcu
+    display_name: Auto-Labeling & Data Curation
+  robot_foundation_models_edge:
+    domain_id: rfme
+    display_name: Robot Foundation Models & Edge
+
+agents:
+  # --- Agent Platform / Data / Model / AI Infra solutions ---
+  gemini_live_interaction:
+    domain: human_robot_interaction
+    agent_id: glin
+    location: global
+    product_tag: "Agent Platform"
+    display_name: "Gemini Live Interaction"
+    demo_mp4: "demos/agent-platform/gemini_live_interaction.mp4"
+    source_slides: "15-17, 21"
+    tables: []
+
+  robot_skills_action_agent:
+    domain: human_robot_interaction
+    agent_id: rsaa
+    location: us-central1
+    product_tag: "Agent Platform"
+    display_name: "Robot Skills & Action Agent"
+    demo_html: "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/"
+    source_slides: "11, 16, 18, 79"
+    tables: []
+
+  robotics_auto_labeling:
+    domain: data_labeling_curation
+    agent_id: ralb
+    location: us-central1
+    product_tag: "Agent Platform"
+    display_name: "Robotics Auto-Labeling"
+    demo_mp4: "demos/agent-platform/robotics_auto_labeling.mp4"
+    source_slides: "23, 24, 26"
+    tables: []
+
+  auto_label_prompt_tuning_agent:
+    domain: data_labeling_curation
+    agent_id: alpt
+    location: us-central1
+    product_tag: "Agent Platform"
+    display_name: "Self-tuning Agent for Auto-Labeling"
+    demo_images:
+      - "demos/screenshots/slide_25.png"
+      - "demos/screenshots/slide_26.png"
+    source_slides: "25, 26"
+    tables: []
+
+  multiview_vla_validation_judge:
+    domain: policy_eval_diagnostics
+    agent_id: mvvj
+    location: us-central1
+    product_tag: "Agent Platform"
+    display_name: "Multi-View VLA Validation Judge"
+    demo_images:
+      - "demos/screenshots/slide_29.png"
+      - "demos/screenshots/slide_30.png"
+    source_slides: "29-30"
+    tables: []
+
+  synthetic_data_factory:
+    domain: sim_to_real_synthetic
+    agent_id: sdfy
+    location: us-central1
+    product_tag: "Agent Platform"
+    display_name: "Synthetic Data Factory (Veo / Nano Banana / Imagen)"
+    demo_mp4: "demos/agent-platform/synthetic_data_factory.mp4"
+    demo_html: "https://robotic-prompt-generator-811235746107.us-central1.run.app/"
+    source_slides: "32-39"
+    tables: []
+
+  multimodal_robot_vector_search:
+    domain: data_labeling_curation
+    agent_id: mrvs
+    location: us-central1
+    product_tag: "Data"
+    display_name: "Multimodal Robot Data Vector Search"
+    demo_mp4: "demos/data/multimodal_robot_vector_search.mp4"
+    source_slides: "44-45"
+    tables: []
+
+  smart_storage_auto_annotate:
+    domain: data_labeling_curation
+    agent_id: ssaa
+    location: us-central1
+    product_tag: "Data"
+    display_name: "Smart Storage Auto-Annotate + BigQuery Insights"
+    demo_images:
+      - "demos/screenshots/slide_51.png"
+    source_slides: "51"
+    tables: []
+
+  robot_data_flywheel_platform:
+    domain: fleet_telemetry_maintenance
+    agent_id: rdfp
+    location: us-central1
+    product_tag: "Data"
+    display_name: "Robot Data Flywheel Platform"
+    demo_mp4: "demos/data/robot_data_flywheel_platform.mp4"
+    source_slides: "43, 52, 101, 118"
+    tables:
+      - joint_telemetry
+      - perception_events
+      - decision_logs
+      - robot_events
+
+  gcp_smart_vision:
+    domain: data_labeling_curation
+    agent_id: gsvn
+    location: us-central1
+    product_tag: "Data"
+    display_name: "GCP Smart Vision (Edge Video to Semantic Alerts)"
+    demo_images:
+      - "demos/screenshots/slide_49.png"
+    source_slides: "47-50"
+    tables: []
+
+  gemini_robotics_er_model:
+    domain: robot_foundation_models_edge
+    agent_id: germ
+    location: us-central1
+    product_tag: "Model"
+    display_name: "Gemini Robotics ER Model"
+    demo_mp4: "demos/model/gemini_robotics_er_model.mp4"
+    demo_html: "https://gemini-robotic-er2-242017771503.us-central1.run.app/"
+    source_slides: "74-81"
+    tables: []
+
+  gemma_on_device_robot_brain:
+    domain: robot_foundation_models_edge
+    agent_id: godb
+    location: edge
+    product_tag: "Model"
+    display_name: "Gemma 4 On-Device Multilingual Robot Brain"
+    demo_images:
+      - "demos/screenshots/slide_71.png"
+      - "demos/screenshots/slide_73.png"
+    demo_html: "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+    source_slides: "71, 73"
+    tables: []
+
+  scalable_physics_simulation:
+    domain: sim_to_real_synthetic
+    agent_id: spsi
+    location: us-central1
+    product_tag: "AI Infra"
+    display_name: "Scalable Physics Simulation (MuJoCo / Isaac Sim)"
+    demo_mp4: "demos/ai-infra/scalable_physics_simulation.mp4"
+    source_slides: "55-58, 66, 112"
+    tables: []
+
+  embodied_rl_model_training:
+    domain: robot_foundation_models_edge
+    agent_id: ermt
+    location: us-central1
+    product_tag: "AI Infra"
+    display_name: "Embodied AI & RL Model Training"
+    demo_images:
+      - "demos/screenshots/slide_61.png"
+      - "demos/screenshots/slide_60.png"
+    source_slides: "60-61, 66"
+    tables: []
+
+  # --- Gemini Enterprise Agents ---
+  data_collection_annotation_ops:
+    domain: robot_data_ops
+    agent_id: dcao
+    location: us-central1
+    product_tag: "Gemini Enterprise"
+    display_name: "Robot Data Operations: Data Collection & Annotation Ops Intelligence"
+    description: "Connects Gemini Enterprise to robot data lakes (Cloud Storage, BigQuery) and labeling pipeline trackers. Enables operations leads and data engineers to monitor collection volume, teleoperation hours, annotation stages, and QA verification velocity via natural language."
+    roi_metric: "QA Verification & Data Velocity (+35% verification velocity / $240K quarterly savings)"
+    tables:
+      - teleop_session_logs
+      - annotation_task_pipeline
+      - qa_verification_velocity
+
+  multimodal_eval_failure_diagnostics:
+    domain: policy_eval_diagnostics
+    agent_id: mefd
+    location: us-central1
+    product_tag: "Gemini Enterprise"
+    display_name: "Policy Evaluation: Multimodal Evaluation & Failure Root Cause Analysis"
+    description: "Leverages Gemini Enterprise's multimodal retrieval capabilities across evaluation rollout videos, metric tables, and run logs. Helps policy engineers query task success rates, diagnose edge-case failures, and retrieve exact rollout segments showing policy errors."
+    roi_metric: "Policy Failure MTTR & Success Uplift (+28% success rate / -45% diagnosis time)"
+    tables:
+      - eval_rollout_metrics
+      - failure_root_causes
+      - joint_singularity_events
+
+  synthetic_scene_curation_copilot:
+    domain: sim_to_real_synthetic
+    agent_id: sscc
+    location: us-central1
+    product_tag: "Gemini Enterprise"
+    display_name: "Sim-to-Real: Synthetic Scene & Edge-Case Curation Copilot"
+    description: "Bridges real-world failure logs with 3D simulation asset repositories. Translates natural language descriptions of real-world edge cases into simulation configurations (lighting variations, clutter density, friction parameters) to augment low-data regimes."
+    roi_metric: "Synthetic Augmentation & Sim-to-Real Transfer (+60% low-data regime coverage / $380K compute optimization)"
+    tables:
+      - edge_case_real_trials
+      - sim_asset_library
+      - domain_randomization_configs
+
+  fleet_diagnostics_hardware_maintenance:
+    domain: fleet_telemetry_maintenance
+    agent_id: fdhm
+    location: us-central1
+    product_tag: "Gemini Enterprise"
+    display_name: "Fleet Telemetry: Fleet Diagnostics & Hardware Maintenance Assistant"
+    description: "Grounds Gemini Enterprise on high-frequency joint telemetry, error logs, and hardware repair SOPs. Enables field technicians and hardware engineers to troubleshoot anomalies, anticipate component fatigue, and obtain step-by-step repair guidance."
+    roi_metric: "Fleet Hardware Uptime & MTBF (-40% unplanned hardware downtime / $520K annual maintenance savings)"
+    tables:
+      - joint_telemetry_streams
+      - actuator_maintenance_history
+      - force_torque_calibration_logs
+
+  embodied_ai_safety_audit:
+    domain: safety_compliance_release
+    agent_id: easa
+    location: us-central1
+    product_tag: "Gemini Enterprise"
+    display_name: "Safety & Compliance: Embodied AI Safety Audit & Release Readiness Agent"
+    description: "Integrates pre-deployment benchmark evaluations, ISO/OSHA robotic safety standards, and out-of-distribution (OOD) stress tests. Automatically generates safety audit summaries and verifies compliance before weights are flashed to edge hardware."
+    roi_metric: "Policy Gate Compliance & Zero Violations (100% ISO/OSHA safety threshold verification)"
+    tables:
+      - model_safety_benchmarks
+      - iso_compliance_evals
+      - deployment_gate_checklists
+
+

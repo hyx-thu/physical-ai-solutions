@@ -1,0 +1,28 @@
+{
+  "eval_set": [
+    {
+      "query": "How many total hours and video clips were collected this week across all household robot setups?",
+      "expected_intent": "data_insights",
+      "assertions": [
+        {
+          "type": "contains_number",
+          "description": "Response contains grounded quantitative metrics"
+        },
+        {
+          "type": "no_hallucination",
+          "description": "Response is grounded in BigQuery tools"
+        }
+      ]
+    },
+    {
+      "query": "What are the latest Open X-Embodiment and robotics data collection benchmarks for imitation learning?",
+      "expected_intent": "market_context",
+      "assertions": [
+        {
+          "type": "grounded_search",
+          "description": "Response references external robotics standards/benchmarks"
+        }
+      ]
+    }
+  ]
+}

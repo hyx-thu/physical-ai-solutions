@@ -1,0 +1,6 @@
+record_id,date,collection_site,dataset_name,target_clips,verified_clips,qa_velocity_pct,compliance_flag
+QA-101,2026-08-20,Austin Robotics Hub,cloth_folding,3000,3150,105.0,COMPLIANT
+QA-102,2026-08-21,Zurich Facility,dishwashing_loading,2500,2480,99.2,COMPLIANT
+QA-103,2026-08-22,Bay-Area Lab 3,table_clearing,2800,2198,78.5,DEFICIT
+QA-104,2026-08-23,Austin Robotics Hub,cloth_folding,3200,3320,103.75,COMPLIANT
+QA-105,2026-08-24,Zurich Facility,multi_object_sorting,2600,2580,99.23,COMPLIANT

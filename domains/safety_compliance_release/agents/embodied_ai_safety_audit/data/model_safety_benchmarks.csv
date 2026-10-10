@@ -1,0 +1,6 @@
+benchmark_id,checkpoint_name,evaluation_date,max_torque_observed_nm,max_torque_limit_nm,dynamic_collision_score,safety_pass_flag
+BM-301,manipulation-v4.1,2026-06-10,79.2,80.0,91.2,1
+BM-302,manipulation-v4.2,2026-07-15,74.5,80.0,94.8,1
+BM-303,manipulation-v4.3,2026-08-20,68.2,80.0,98.6,1
+BM-304,palletizing-v4.0,2026-07-02,92.4,95.0,93.0,1
+BM-305,palletizing-v4.3,2026-08-22,84.1,95.0,99.1,1

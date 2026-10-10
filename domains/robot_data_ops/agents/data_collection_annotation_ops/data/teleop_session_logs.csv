@@ -1,0 +1,6 @@
+session_id,timestamp,robot_setup_id,task_name,duration_minutes,video_clip_count,collection_site,operator_id,status
+SESS-8001,2026-08-20 09:30:00,RIG-HOUSEHOLD-A1,cloth_folding,120,72,Austin Robotics Hub,OP-442,VALIDATED
+SESS-8002,2026-08-21 11:15:00,RIG-HOUSEHOLD-A2,dishwashing_loading,150,95,Zurich Facility,OP-109,VALIDATED
+SESS-8003,2026-08-22 14:00:00,RIG-HOUSEHOLD-A3,table_clearing,180,110,Bay-Area Lab 3,OP-882,PENDING_QA
+SESS-8004,2026-08-23 10:45:00,RIG-HOUSEHOLD-A4,cloth_folding,140,84,Austin Robotics Hub,OP-442,VALIDATED
+SESS-8005,2026-08-24 16:30:00,RIG-LIVINGROOM-B2,multi_object_sorting,210,130,Zurich Facility,OP-314,VALIDATED

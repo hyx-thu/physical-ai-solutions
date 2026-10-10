@@ -1,0 +1,28 @@
+{
+  "eval_set": [
+    {
+      "query": "Are any robot units showing abnormal motor temperature spikes or joint backlash over the last 48 hours?",
+      "expected_intent": "data_insights",
+      "assertions": [
+        {
+          "type": "contains_number",
+          "description": "Response contains grounded quantitative metrics"
+        },
+        {
+          "type": "no_hallucination",
+          "description": "Response is grounded in BigQuery tools"
+        }
+      ]
+    },
+    {
+      "query": "What are the manufacturer motor temperature limits and harmonic drive maintenance cycles for Unitree and KUKA robotics actuators?",
+      "expected_intent": "market_context",
+      "assertions": [
+        {
+          "type": "grounded_search",
+          "description": "Response references external robotics standards/benchmarks"
+        }
+      ]
+    }
+  ]
+}

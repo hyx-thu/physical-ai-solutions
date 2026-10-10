@@ -1,0 +1,28 @@
+{
+  "eval_set": [
+    {
+      "query": "What is the overall success rate for dishwashing tasks in kitchen environments over the last 30 days?",
+      "expected_intent": "data_insights",
+      "assertions": [
+        {
+          "type": "contains_number",
+          "description": "Response contains grounded quantitative metrics"
+        },
+        {
+          "type": "no_hallucination",
+          "description": "Response is grounded in BigQuery tools"
+        }
+      ]
+    },
+    {
+      "query": "What are current SOTA failure recovery techniques for VLA models on specular objects in CoRL and ICRA literature?",
+      "expected_intent": "market_context",
+      "assertions": [
+        {
+          "type": "grounded_search",
+          "description": "Response references external robotics standards/benchmarks"
+        }
+      ]
+    }
+  ]
+}

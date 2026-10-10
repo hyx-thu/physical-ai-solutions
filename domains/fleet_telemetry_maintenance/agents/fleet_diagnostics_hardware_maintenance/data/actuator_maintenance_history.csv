@@ -1,0 +1,6 @@
+record_id,unit_id,maintenance_date,actuator_id,replaced_part,technician_id,error_code,notes
+MNT-201,UNIT-082,2026-06-14,ACT-J4-88,Harmonic_Drive_Gearhead,TECH-512,ERR_ACTUATOR_OVERCURRENT_401,Replaced worn gearhead due to tooth micro-pitting
+MNT-202,UNIT-082,2026-07-22,SEN-FT-02,None (Recalibration),TECH-309,ERR_FT_DRIFT_WARNING,Static gravity tare and zero-point recalibration complete
+MNT-203,UNIT-083,2026-05-18,ACT-J1-12,Encoder_Disk_Assembly,TECH-512,ERR_ENCODER_SYNC_LOST,Replaced optical encoder disk after vibration test
+MNT-204,UNIT-095,2026-07-30,ACT-J2-33,Stator_Winding,TECH-104,ERR_MOTOR_TEMP_MAX,High thermal resistance replaced stator
+MNT-205,UNIT-082,2026-08-25,ACT-J3-45,Pending Inspection,TECH-309,ERR_THERMAL_SPIKE_WARN,Work order WO-2026-981 issued for Joint 3 stator check

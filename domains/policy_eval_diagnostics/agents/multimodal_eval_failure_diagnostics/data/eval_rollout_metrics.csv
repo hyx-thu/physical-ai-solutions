@@ -1,0 +1,6 @@
+eval_id,timestamp,task_name,environment_type,policy_checkpoint,success_flag,execution_time_sec,singularity_flag
+EVAL-501,2026-08-18 10:12:00,dishwashing_loading,Kitchen_Island_01,vla-manip-v4.3,1,42.5,0
+EVAL-502,2026-08-19 14:28:00,dishwashing_loading,Kitchen_DeepSink_02,vla-manip-v4.3,0,78.2,1
+EVAL-503,2026-08-20 16:45:00,glass_sorting,Kitchen_Dining_03,vla-manip-v4.3,1,35.1,0
+EVAL-504,2026-08-21 11:20:00,pot_scrubbing,Kitchen_Island_01,vla-manip-v4.3,1,58.0,0
+EVAL-505,2026-08-22 09:05:00,dishwashing_loading,Kitchen_DeepSink_02,vla-manip-v4.3,0,64.8,1

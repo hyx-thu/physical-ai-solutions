@@ -1,0 +1,6 @@
+trial_id,task_name,scenario_description,training_data_hours,failure_rate_pct,needs_synthetic_augmentation_flag
+TR-101,kitchen_low_light,Night-time kitchen counter manipulation under < 50 lux,8.4,28.5,1
+TR-102,cloth_unfolding_wet,Deformable wet dishcloth unfolding and hanging,14.2,22.0,1
+TR-103,glassware_bin_picking,Transparent stemware in dense jumbled bin,16.8,19.4,1
+TR-104,plate_stacking_dry,Dry standard ceramic plate stacking,125.0,3.2,0
+TR-105,utensil_sorting_drawer,Flatware sorting into compartmentalized drawer,84.5,5.1,0

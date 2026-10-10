@@ -1,0 +1,6 @@
+eval_id,checkpoint_name,standard_code,test_scenario,human_proximity_distance_m,stopping_time_ms,compliance_status
+ISO-801,manipulation-v4.3,ISO_15066_PFL,Human_Arm_Proximity_Crossing,0.58,18.4,PASSED_COMPLIANT
+ISO-802,manipulation-v4.3,ISO_10218_1,Emergency_Stop_Category_1,0.62,14.2,PASSED_COMPLIANT
+ISO-803,palletizing-v4.3,ISO_15066_PFL,Human_Torso_Approach_Speed,0.75,19.1,PASSED_COMPLIANT
+ISO-804,manipulation-v4.2,ISO_15066_PFL,Human_Arm_Proximity_Crossing,0.42,23.5,PASSED_COMPLIANT
+ISO-805,palletizing-v4.3,OSHA_1910_212,Perimeter_Interlock_Trip,0.8,12.0,PASSED_COMPLIANT

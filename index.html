@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent and solutions for Physical AI — Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('physicalai_agents_theme') || localStorage.getItem('telco_agents_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <style>
+    :root, [data-theme="dark"] {
+      --bg-primary: #0b1120;
+      --bg-secondary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-surface: #0f172a;
+      --border-color: #334155;
+      --border-faint: rgba(255, 255, 255, 0.12);
+      --border-focus: #38bdf8;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-blue: #38bdf8;
+      --accent-blue-hover: #0284c7;
+      --accent-indigo: #818cf8;
+      --badge-bg: rgba(56, 189, 248, 0.12);
+      --badge-border: rgba(56, 189, 248, 0.28);
+      --badge-text: #38bdf8;
+      --region-bg: rgba(129, 140, 248, 0.12);
+      --region-border: rgba(129, 140, 248, 0.28);
+      --region-text: #818cf8;
+      --kpi-bg: rgba(52, 211, 153, 0.12);
+      --kpi-border: rgba(52, 211, 153, 0.28);
+      --kpi-text: #34d399;
+      --hero-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --modal-overlay: rgba(11, 17, 32, 0.85);
+      --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-surface: #f1f5f9;
+      --border-color: #cbd5e1;
+      --border-faint: #e2e8f0;
+      --border-focus: #0284c7;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --accent-blue: #0284c7;
+      --accent-blue-hover: #0369a1;
+      --accent-indigo: #6366f1;
+      --badge-bg: #e0f2fe;
+      --badge-border: #bae6fd;
+      --badge-text: #0284c7;
+      --region-bg: #ede9fe;
+      --region-border: #ddd6fe;
+      --region-text: #6366f1;
+      --kpi-bg: #d1fae5;
+      --kpi-border: #a7f3d0;
+      --kpi-text: #059669;
+      --hero-gradient: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --modal-overlay: rgba(15, 23, 42, 0.6);
+      --shadow-modal: 0 20px 35px -10px rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Global Header */
+    .site-header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-icon {
+      font-size: 1.75rem;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn-header:hover {
+      color: var(--text-primary);
+      border-color: var(--border-focus);
+    }
+
+    .btn-primary-header {
+      background: var(--accent-blue);
+      color: #0f172a;
+      border-color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    .btn-primary-header:hover {
+      background: var(--accent-blue-hover);
+      color: #ffffff;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 48px 24px 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+    }
+
+    .hero-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      max-width: 900px;
+    }
+
+    .hero-title span {
+      background: var(--hero-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 820px;
+    }
+
+    /* Platform Stats */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 1050px;
+      margin-top: 16px;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-number {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 1360px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px 64px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Toolbar: Search and Filter Pills */
+    .toolbar {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 16px 12px 46px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 4px;
+      display: none;
+    }
+
+    .search-clear:hover {
+      color: var(--text-primary);
+    }
+
+    /* Filter Groups & Tabs */
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .filter-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .product-pills, .domain-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .product-btn, .domain-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-faint);
+      color: var(--text-secondary);
+      padding: 7px 13px;
+      border-radius: 9999px;
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .product-btn:hover, .domain-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-focus);
+    }
+
+    .product-btn.active, .domain-btn.active {
+      background: var(--accent-blue);
+      color: #0f172a;
+      border-color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    .product-btn.active {
+      background: var(--accent-indigo);
+      color: #ffffff;
+      border-color: var(--accent-indigo);
+    }
+
+    .product-count, .domain-count {
+      font-size: 0.72rem;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      background: rgba(0, 0, 0, 0.18);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .product-btn.active .product-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    .domain-btn.active .domain-count {
+      background: rgba(15, 23, 42, 0.25);
+      color: #0f172a;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Results Header */
+    .results-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 4px;
+    }
+
+    .results-count {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .results-count strong {
+      color: var(--text-primary);
+    }
+
+    /* Agent Grid */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+      gap: 20px;
+    }
+
+    .agent-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .agent-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-focus);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+
+    /* Product Badges */
+    .badge-product {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.03em;
+      display: inline-flex;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .badge-product-gemini-enterprise, .badge-product-ge {
+      background: rgba(168, 85, 247, 0.18);
+      border: 1px solid rgba(168, 85, 247, 0.38);
+      color: #c084fc;
+    }
+    .badge-product-agent-platform, .badge-product-geap {
+      background: rgba(56, 189, 248, 0.18);
+      border: 1px solid rgba(56, 189, 248, 0.38);
+      color: #38bdf8;
+    }
+    .badge-product-data, .badge-product-dadb {
+      background: rgba(52, 211, 153, 0.18);
+      border: 1px solid rgba(52, 211, 153, 0.38);
+      color: #34d399;
+    }
+    .badge-product-model {
+      background: rgba(244, 114, 182, 0.18);
+      border: 1px solid rgba(244, 114, 182, 0.38);
+      color: #f472b6;
+    }
+    .badge-product-infra-sim {
+      background: rgba(251, 191, 36, 0.18);
+      border: 1px solid rgba(251, 191, 36, 0.38);
+      color: #fbbf24;
+    }
+
+    [data-theme="light"] .badge-product-gemini-enterprise,
+    [data-theme="light"] .badge-product-ge {
+      background: #f3e8ff;
+      border-color: #d8b4fe;
+      color: #7e22ce;
+    }
+    [data-theme="light"] .badge-product-agent-platform,
+    [data-theme="light"] .badge-product-geap {
+      background: #e0f2fe;
+      border-color: #bae6fd;
+      color: #0369a1;
+    }
+    [data-theme="light"] .badge-product-data,
+    [data-theme="light"] .badge-product-dadb {
+      background: #dcfce7;
+      border-color: #bbf7d0;
+      color: #15803d;
+    }
+    [data-theme="light"] .badge-product-model {
+      background: #fce7f3;
+      border-color: #fbcfe8;
+      color: #be185d;
+    }
+    [data-theme="light"] .badge-product-infra-sim {
+      background: #fef3c7;
+      border-color: #fde68a;
+      color: #b45309;
+    }
+
+    .badge-domain {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--badge-text);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-region {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--region-bg);
+      border: 1px solid var(--region-border);
+      color: var(--region-text);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .card-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* KPI Tags */
+    .kpi-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .kpi-pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--kpi-bg);
+      border: 1px solid var(--kpi-border);
+      color: var(--kpi-text);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Prompts Collapsible */
+    .prompts-container {
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+      margin-bottom: 16px;
+    }
+
+    .prompts-toggle {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      cursor: pointer;
+      padding: 2px 0;
+    }
+
+    .prompts-toggle:hover {
+      color: var(--accent-blue);
+    }
+
+    .prompts-list {
+      margin-top: 8px;
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .prompts-list.open {
+      display: flex;
+    }
+
+    .prompt-item {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      background: var(--bg-surface);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-indigo);
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* Card Actions */
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .btn-watch {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--accent-blue);
+      color: #0f172a;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-watch:hover {
+      background: var(--accent-blue-hover);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-showcase {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      transition: all 0.15s ease;
+    }
+
+    .btn-showcase:hover {
+      border-color: var(--border-focus);
+      color: var(--accent-blue);
+    }
+
+    .btn-doc {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      color: var(--text-muted);
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+    }
+
+    .btn-doc:hover {
+      color: var(--text-primary);
+      border-color: var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    /* No Results State */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-color);
+      border-radius: 14px;
+      display: none;
+    }
+
+    .no-results-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .no-results-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .no-results-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--modal-overlay);
+      backdrop-filter: blur(6px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-dialog {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 960px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-modal);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .modal-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .modal-close {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      border-radius: 8px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.15s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+      border-color: var(--border-focus);
+    }
+
+    .modal-body {
+      padding: 24px;
+      flex: 1;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-container video {
+      width: 100%;
+      display: block;
+      max-height: 520px;
+    }
+
+    /* Architecture Blueprint Diagram */
+    .arch-diagram {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .arch-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .arch-node-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .arch-node-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .arch-arrow {
+      text-align: center;
+      color: var(--accent-blue);
+      font-size: 1.1rem;
+      line-height: 1;
+      margin: -6px 0;
+      opacity: 0.85;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      padding: 32px 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.85rem;
+      }
+      .agent-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-logo">
+        <span class="brand-icon">🦾</span>
+        <div class="brand-text">
+          <span class="brand-title">Agent and solutions for Physical AI</span>
+          <span class="brand-subtitle">Google Cloud Enterprise AI, GEAP, Data & Model Solutions</span>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button id="archBtn" class="btn-header" aria-label="View Architecture Blueprint">
+          <span>📐</span> Architecture Blueprint
+        </button>
+        <button id="themeToggleBtn" class="btn-header" aria-label="Toggle Light/Dark Theme">
+          <span id="themeIcon">☀️</span> <span id="themeText">Light</span>
+        </button>
+        <a href="https://github.com/hyx-thu/physical-ai-solutions" target="_blank" rel="noopener noreferrer" class="btn-header btn-primary-header">
+          <span>⭐</span> GitHub Repository
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pill">
+      <span>🚀</span> 19 Agents & Solutions across Agent Platform, Data, Model, AI Infra &amp; Gemini Enterprise
+    </div>
+    <h1 class="hero-title">
+      Agent and solutions for <span>Physical AI</span>
+    </h1>
+    <p class="hero-desc">
+      A unified enterprise catalog spanning Agent Platform, Data, Model, AI Infra, and Gemini Enterprise solutions for Physical AI — from multimodal human-robot interaction, auto-labeling and robot data flywheels, to synthetic data, scalable simulation, RL training, and foundation models.
+    </p>
+
+    <!-- Platform Stats -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">19</div>
+        <div class="stat-label">Agents & Solutions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Product Categories</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Physical AI Domains</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">BigQuery Tables</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Live Demos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <main class="main-container">
+    
+    <!-- Toolbar: Search, Product & Domain Filters -->
+    <section class="toolbar">
+      <div class="search-row">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search by name, product (Agent Platform, Data, Model, AI Infra, Gemini Enterprise), KPI, domain, or BigQuery table..." autocomplete="off">
+          <button id="searchClear" class="search-clear" aria-label="Clear search">✕</button>
+        </div>
+      </div>
+
+      <!-- Product Filter Pills -->
+      <div class="filter-group">
+        <span class="filter-label">🏷️ Product Type</span>
+        <div class="product-pills" id="productPills">
+          <button class="product-btn active" data-product="all">
+            All Products <span class="product-count">19</span>
+          </button>
+          <button class="product-btn" data-product="Agent Platform">
+            <span class="badge-dot" style="background:#38bdf8;"></span> Agent Platform <span class="product-count">6</span>
+          </button>
+          <button class="product-btn" data-product="Data">
+            <span class="badge-dot" style="background:#34d399;"></span> Data <span class="product-count">4</span>
+          </button>
+          <button class="product-btn" data-product="Model">
+            <span class="badge-dot" style="background:#f472b6;"></span> Model <span class="product-count">2</span>
+          </button>
+          <button class="product-btn" data-product="AI Infra">
+            <span class="badge-dot" style="background:#fbbf24;"></span> AI Infra <span class="product-count">2</span>
+          </button>
+          <button class="product-btn" data-product="Gemini Enterprise">
+            <span class="badge-dot" style="background:#c084fc;"></span> Gemini Enterprise <span class="product-count">5</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Domain Pills -->
+      <div class="filter-group">
+        <span class="filter-label">🌐 Robotics Domain</span>
+        <div class="domain-pills" id="domainPills">
+          <button class="domain-btn active" data-domain="all">
+            <span>🌐</span> All Domains <span class="domain-count">19</span>
+          </button>
+          <button class="domain-btn" data-domain="human_robot_interaction">
+            <span>🗣️</span> Human-Robot Interaction & Agents <span class="domain-count">2</span>
+          </button><button class="domain-btn" data-domain="data_labeling_curation">
+            <span>🏷️</span> Auto-Labeling & Data Curation <span class="domain-count">5</span>
+          </button><button class="domain-btn" data-domain="sim_to_real_synthetic">
+            <span>🌐</span> Sim-to-Real & Synthetic Data Pipeline <span class="domain-count">3</span>
+          </button><button class="domain-btn" data-domain="robot_foundation_models_edge">
+            <span>🤖</span> Robot Foundation Models & Edge <span class="domain-count">3</span>
+          </button><button class="domain-btn" data-domain="policy_eval_diagnostics">
+            <span>🔬</span> Policy Evaluation & Failure Diagnostics <span class="domain-count">2</span>
+          </button><button class="domain-btn" data-domain="fleet_telemetry_maintenance">
+            <span>⚙️</span> Fleet Telemetry & Predictive Maintenance <span class="domain-count">2</span>
+          </button><button class="domain-btn" data-domain="robot_data_ops">
+            <span>🦾</span> Robot Data Operations & Teleoperation <span class="domain-count">1</span>
+          </button><button class="domain-btn" data-domain="safety_compliance_release">
+            <span>🛡️</span> Safety, Compliance & Policy Release <span class="domain-count">1</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Header -->
+    <div class="results-bar">
+      <div class="results-count" id="resultsCount">
+        Showing <strong>19</strong> of 19 agents & solutions
+      </div>
+    </div>
+
+    <!-- Agent Grid -->
+    <div class="agent-grid" id="agentGrid">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- No Results Fallback -->
+    <div class="no-results" id="noResults">
+      <div class="no-results-icon">🔎</div>
+      <div class="no-results-title">No Matching Agents or Solutions Found</div>
+      <p class="no-results-desc">Try refining your search keyword or switching product and domain filter tabs.</p>
+      <button class="btn-header" onclick="resetFilters()">Reset All Filters</button>
+    </div>
+
+  </main>
+
+  <!-- Video Player Modal -->
+  <div class="modal-backdrop" id="videoModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div style="display:flex; gap:8px; align-items:center; margin-bottom:4px; flex-wrap:wrap;">
+            <span id="modalProductBadge" class="badge-product badge-product-ge">GE</span>
+            <span id="modalDomainBadge" class="badge-domain">Domain</span>
+            <span id="modalRegionBadge" class="badge-region">us-central1</span>
+          </div>
+          <h2 id="modalAgentTitle" class="modal-title">Agent Title</h2>
+        </div>
+        <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-container" id="modalVideoBox">
+          <video id="modalVideo" src="" controls autoplay playsinline preload="metadata">
+            Your browser does not support HTML5 video.
+          </video>
+          <iframe id="modalIframe" src="" width="100%" height="480" style="border:0; display:none;" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div id="modalImageGallery" style="display:none; width:100%; background:#0B0F19; padding:12px; box-sizing:border-box; text-align:center;"></div>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <p id="modalAgentDesc" style="font-size:0.9rem; color:var(--text-secondary); max-width:650px; line-height:1.5;">
+            Agent description goes here.
+          </p>
+          <a id="modalWalkthroughLink" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary-header btn-header" style="text-decoration:none;">
+            <span>⚡</span> Open Interactive Walkthrough
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Architecture Modal -->
+  <div class="modal-backdrop" id="archModal">
+    <div class="modal-dialog" style="max-width: 900px;">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="badge-domain">Architecture Blueprint</span>
+          <h2 class="modal-title">Gemini Enterprise Agent Platform Topology</h2>
+        </div>
+        <button class="modal-close" id="archModalCloseBtn" aria-label="Close architecture modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="arch-diagram">
+          <div class="arch-node">
+            <div class="arch-node-title"><span>👤</span> Physical AI Operations & Policy Engineers</div>
+            <div class="arch-node-desc">Natural language queries submitted via Gemini Enterprise Web UI, Gemini CLI, or REST API endpoints.</div>
+          </div>
+          <div class="arch-arrow">▼</div>
+          <div class="arch-node">
+            <div class="arch-node-title"><span>🧠</span> Root Orchestrator LlmAgent (gemini-3.5-flash)</div>
+            <div class="arch-node-desc">Determines intent, executes session callbacks (set_current_date), and orchestrates sub-agent routing.</div>
+          </div>
+          <div class="arch-arrow">▼</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="arch-node">
+              <div class="arch-node-title"><span>⚡</span> Data Insights Sub-Agent</div>
+              <div class="arch-node-desc">BigQuery CA API (ask_data_insights, forecast, detect_anomalies) + Matplotlib (render_chart) querying physical_ai_ent_agents dataset.</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-node-title"><span>🌐</span> Market Context Sub-Agent</div>
+              <div class="arch-node-desc">Google Search grounding across IEEE RAS, ISO/TS 15066 safety standards, and CoRL/ICRA robotics publications.</div>
+            </div>
+          </div>
+          <div class="arch-arrow">▼</div>
+          <div class="arch-node">
+            <div class="arch-node-title"><span>📊</span> Gemini Enterprise Canvas Presentation</div>
+            <div class="arch-node-desc">Synthesizes quantitative metrics, visual chart artifacts, and research into interactive 4-slide executive decks.</div>
+          </div>
+        </div>
+        <div style="text-align: right;">
+          <a href="https://github.com/hyx-thu/physical-ai-solutions/blob/master/README.md" target="_blank" rel="noopener noreferrer" class="btn-header">
+            <span>📖</span> Read Full README.md
+          </a>
+          <a href="https://github.com/hyx-thu/physical-ai-solutions/blob/master/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer" class="btn-header" style="margin-left: 8px;">
+            <span>📐</span> Read ARCHITECTURE.md
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="https://github.com/hyx-thu/physical-ai-solutions" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a>
+        <a href="https://cloud.google.com/gemini-enterprise" target="_blank" rel="noopener noreferrer" class="footer-link">Gemini Enterprise Documentation</a>
+        <a href="https://cloud.google.com/vertex-ai/docs/agent-engine" target="_blank" rel="noopener noreferrer" class="footer-link">Vertex AI Agent Engine</a>
+        <a href="https://github.com/hyx-thu/physical-ai-solutions/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="footer-link">Apache-2.0 License</a>
+      </div>
+      <p class="footer-text">
+        Agent and solutions for Physical AI · Powered by Google Cloud AI, GEAP, Data, Model &amp; AI Infra Solutions
+      </p>
+    </div>
+  </footer>
+
+  <!-- Client-Side Search, Filter, and Modal Logic -->
+  <script>
+    const AGENTS_DATA = [
+  {
+    "name": "gemini_live_interaction",
+    "title": "Gemini Live Interaction",
+    "product_tag": "Agent Platform",
+    "domain": "human_robot_interaction",
+    "domain_display": "Human-Robot Interaction & Agents",
+    "domain_icon": "\ud83d\udde3\ufe0f",
+    "description": "Real-time low-latency multimodal interaction (streaming camera vision, voice/audio & spatial awareness) combined with Enterprise Multimodal RAG. Grounds interruptible, emotion-aware robot conversations on facility SOPs, product/equipment manuals, spatial maps, and persistent user memory across 40+ languages.",
+    "kpis": ["Multimodal Round-trip Latency: < 800 ms", "RAG Grounded Factuality: >= 96%", "Supported Languages: 40+ live"],
+    "prompts": ["Look at the control panel in front of me, retrieve the wiring SOP via RAG, and guide me step by step.", "Switch to the bilingual concierge persona, check live store inventory via RAG, and escort the guest.", "Remember this user's preferences and summarize our multimodal visual inspection into the shift log."],
+    "tables": [],
+    "stack": ["Gemini Live API", "Vertex AI RAG Engine", "Multimodal Embeddings", "Agent Engine", "Google Search Grounding"],
+    "location": "global",
+    "demo_mp4": "demos/agent-platform/gemini_live_interaction.mp4",
+    "source_slides": "Deck slides 15-17, 21 (Unitree Live Demo)"
+  },
+  {
+    "name": "robot_skills_action_agent",
+    "title": "Robot Skills & Action Agent",
+    "product_tag": "Agent Platform",
+    "domain": "human_robot_interaction",
+    "domain_display": "Human-Robot Interaction & Agents",
+    "domain_icon": "\ud83d\udde3\ufe0f",
+    "description": "ADK agent that takes actions on behalf of users through connectors (POI lookup, booking, messaging, ecosystem apps), captures expert experience as reusable skills, and escalates to a human operator when confidence is low.",
+    "kpis": ["Autonomous Action Success: >= 92%", "Human Escalation Rate: < 8%", "Skill Reuse Across Fleet: >= 70%"],
+    "prompts": ["Book a table for two near the museum at 7pm and send the confirmation to my phone.", "Which of our reusable skills can handle a lost-item request in the lobby?", "Escalate this complaint to a human agent with a conversation summary."],
+    "tables": [],
+    "stack": ["Agent Builder (ADK)", "Agent Engine", "Application Integration Connectors"],
+    "location": "us-central1",
+    "demo_html": "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/",
+    "source_slides": "Deck slides 11, 16, 18, 79"
+  },
+  {
+    "name": "robotics_auto_labeling",
+    "title": "Robotics Auto-Labeling",
+    "product_tag": "Agent Platform",
+    "domain": "data_labeling_curation",
+    "domain_display": "Auto-Labeling & Data Curation",
+    "domain_icon": "\ud83c\udff7\ufe0f",
+    "description": "Hierarchical Gemini auto-labeling of teleop and rollout videos: low-FPS timestamp segmentation, temporal zoom-in action labeling, and an agentic high-FPS 2nd pass. Outputs VLA action JSON, 2D bounding boxes and segmentation masks; optional SFT on 150-500 domain samples.",
+    "kpis": ["Label Throughput: 10x vs manual", "Action Segment Accuracy: >= 90%", "Labeling Cost Reduction: >= 70%"],
+    "prompts": ["Segment this bimanual desk video into atomic actions with start/end timestamps.", "Generate VLA labels for all pick-and-place clips collected yesterday.", "Which clips need a high-FPS second pass because of occlusion?"],
+    "tables": [],
+    "stack": ["Gemini Flash", "Agent Platform Batch Prediction", "Cloud Storage", "BigQuery"],
+    "location": "us-central1",
+    "demo_mp4": "demos/agent-platform/robotics_auto_labeling.mp4?v=2",
+    "source_slides": "Deck slides 23, 24, 26 (2D Seg & VLA Action Demo)"
+  },
+  {
+    "name": "auto_label_prompt_tuning_agent",
+    "title": "Self-tuning Agent for Auto-Labeling",
+    "product_tag": "Agent Platform",
+    "domain": "data_labeling_curation",
+    "domain_display": "Auto-Labeling & Data Curation",
+    "domain_icon": "\ud83c\udff7\ufe0f",
+    "description": "Generator/evaluator agent loop that writes a labeling prompt for a task, scores it with or without ground truth, iterates on feedback, then saves the winning prompt as a skill and executes it on the full video set with a quality report.",
+    "kpis": ["Prompt Iterations to Converge: <= 5", "Label Quality Uplift: +15-25%", "Prompt Engineering Time: -80%"],
+    "prompts": ["Optimize a labeling prompt for 'cloth folding' using these 20 ground-truth clips.", "Evaluate the current prompt without ground truth and suggest improvements.", "Run the saved 'drawer opening' skill on the full dataset and report quality."],
+    "tables": [],
+    "stack": ["Agent Builder (ADK)", "Gemini", "Agent Platform Evaluation"],
+    "location": "us-central1",
+    "demo_images": ["demos/screenshots/slide_25.png", "demos/screenshots/slide_26.png"],
+    "source_slides": "Deck slides 25, 26"
+  },
+  {
+    "name": "multiview_vla_validation_judge",
+    "title": "Multi-View VLA Validation Judge",
+    "product_tag": "Agent Platform",
+    "domain": "policy_eval_diagnostics",
+    "domain_display": "Policy Evaluation & Failure Diagnostics",
+    "domain_icon": "\ud83d\udd2c",
+    "description": "Gemini acts as a real-time judge comparing the robot's intended action (logs/plans) with the perceived outcome across multiple camera views. Flags grasp instability, wobbles and near-misses, and pinpoints root cause (e.g. 'top-view clear, side-view occluded').",
+    "kpis": ["Manual Video Review Eliminated: >= 90%", "Near-miss Detection Recall: >= 95%", "Debug Cycle Time: -60%"],
+    "prompts": ["Score execution quality of trial batch #412 against the planned trajectories.", "Which failures are caused by cross-view inconsistency rather than policy error?", "List all near-miss grasps from the last 1,000 trials with timestamps."],
+    "tables": [],
+    "stack": ["Gemini", "Agent Engine", "Cloud Storage", "BigQuery"],
+    "location": "us-central1",
+    "demo_images": ["demos/screenshots/slide_29.png", "demos/screenshots/slide_30.png"],
+    "source_slides": "Deck slides 29-30"
+  },
+  {
+    "name": "synthetic_data_factory",
+    "title": "Synthetic Data Factory (Veo / Nano Banana / Imagen)",
+    "product_tag": "Agent Platform",
+    "domain": "sim_to_real_synthetic",
+    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
+    "domain_icon": "\ud83c\udf10",
+    "description": "3-step agentic workflow to create edge-case training data: generate images/video with Veo, Nano Banana 2 and Imagen 4 (optionally Genie 3 or NVIDIA Cosmos world models), auto-label on Agent Platform for detection, segmentation and depth, then feed, train and test the robot.",
+    "kpis": ["Edge-case Coverage Uplift: +60%", "Time to Training-ready Data: minutes", "Manual Tagging Required: 0%"],
+    "prompts": ["Generate 500 images of transparent cups under low kitchen lighting.", "Create a video of a robot arm folding a towel from a top-down view.", "Auto-label the generated set with bounding boxes and depth."],
+    "tables": [],
+    "stack": ["Agent Platform", "Veo 3", "Nano Banana 2", "Imagen 4", "Genie 3", "Gemini"],
+    "location": "us-central1",
+    "demo_mp4": "demos/agent-platform/synthetic_data_factory.mp4",
+    "demo_html": "https://robotic-prompt-generator-811235746107.us-central1.run.app/",
+    "source_slides": "Deck slide 36 (Veo AMR Videos) & 38"
+  },
+  {
+    "name": "multimodal_robot_vector_search",
+    "title": "Multimodal Robot Data Vector Search",
+    "product_tag": "Data",
+    "domain": "data_labeling_curation",
+    "domain_display": "Auto-Labeling & Data Curation",
+    "domain_icon": "\ud83c\udff7\ufe0f",
+    "description": "Search massive robot video, image and CAN-data archives with mixed-modality queries ('find robot picking pencils like this one' + image + video). Gemini multimodal embeddings, metadata tagging, prompt rewrite and re-ranking over Vector Search.",
+    "kpis": ["Search Latency (p95): < 1 s", "Retrieval Precision@10: >= 85%", "Data Curation Time: -75%"],
+    "prompts": ["Find clips similar to this image of a robot picking a pencil.", "Show all episodes with a transparent cup and a failed grasp.", "Retrieve CAN-data windows where joint torque spiked during pouring."],
+    "tables": [],
+    "stack": ["gemini-embedding-2", "Vector Search", "Gemini Flash-Lite", "Cloud Storage"],
+    "location": "us-central1",
+    "demo_mp4": "demos/data/multimodal_robot_vector_search.mp4",
+    "source_slides": "Deck slides 44-45 (VectorSearch Demo)"
+  },
+  {
+    "name": "smart_storage_auto_annotate",
+    "title": "Smart Storage Auto-Annotate + BigQuery Insights",
+    "product_tag": "Data",
+    "domain": "data_labeling_curation",
+    "domain_display": "Auto-Labeling & Data Curation",
+    "domain_icon": "\ud83c\udff7\ufe0f",
+    "description": "Enable fully managed auto-annotation at project or bucket scope. Objects are analyzed by Google ML models in the background and detections are written as structured metadata, queryable in bulk via the Storage Insights dataset in BigQuery with lifecycle tied to objects.",
+    "kpis": ["Setup Time: < 10 mins", "Annotated Object Coverage: 100% of scope", "Pipeline Code Required: 0 lines"],
+    "prompts": ["How many images in the collection bucket contain a person near the robot?", "List objects detected in last week's warehouse captures by frequency.", "Which buckets still have un-annotated video?"],
+    "tables": ["storage_insights.object_annotations"],
+    "stack": ["Cloud Storage Auto Annotate", "Storage Insights", "BigQuery"],
+    "location": "us-central1",
+    "demo_images": ["demos/screenshots/slide_51.png"],
+    "source_slides": "Deck slide 51"
+  },
+  {
+    "name": "robot_data_flywheel_platform",
+    "title": "Robot Data Flywheel Platform",
+    "product_tag": "Data",
+    "domain": "fleet_telemetry_maintenance",
+    "domain_display": "Fleet Telemetry & Predictive Maintenance",
+    "domain_icon": "\u2699\ufe0f",
+    "description": "End-to-end closed-loop robot data flywheel: streams on-robot telemetry, multimodal logs and failure episodes via Pub/Sub and Dataflow into Cloud Storage & BigQuery. Automatically curates edge cases, drives Looker fleet health KPIs, and feeds curated episodes back into auto-labeling and model retraining.",
+    "kpis": ["Telemetry Ingest Latency: < 5 s", "Flywheel Retraining Turnaround: -65%", "Storage & Curation TCO: -40%"],
+    "prompts": ["Show task success rate, failure clusters, and MTBF by site for the last 30 days.", "Alert when any joint's torque exceeds 3 sigma of its baseline and stage the video clip for auto-labeling.", "Export curated edge-case episodes from this week into the VLA retraining dataset."],
+    "tables": ["joint_telemetry", "perception_events", "decision_logs", "robot_events"],
+    "stack": ["Pub/Sub", "Dataflow", "BigQuery", "Cloud Storage", "Looker", "Vertex AI"],
+    "location": "us-central1",
+    "demo_mp4": "demos/data/robot_data_flywheel_platform.mp4",
+    "source_slides": "Deck slides 43, 52 (Demo Video), 101, 118"
+  },
+  {
+    "name": "gcp_smart_vision",
+    "title": "GCP Smart Vision (Edge Video to Semantic Alerts)",
+    "product_tag": "Data",
+    "domain": "data_labeling_curation",
+    "domain_display": "Auto-Labeling & Data Curation",
+    "domain_icon": "\ud83c\udff7\ufe0f",
+    "description": "On-device Gemma / Tiny-Gemma detects events; only embeddings and 10-second encrypted clips go to cloud. Gemini generates event summaries, Cloud Run drives alert workflows, and Vector Search enables historical semantic video search with privacy by design.",
+    "kpis": ["Bandwidth Reduction: >= 90%", "Event Detection Precision: >= 92%", "Alert Latency: < 3 s"],
+    "prompts": ["Summarize all key events across cameras in the last hour with timestamps.", "Find every time someone took an item from shelf B yesterday.", "Distinguish between the two same-breed pets in this multi-pet video."],
+    "tables": [],
+    "stack": ["Gemma / Tiny-Gemma", "Gemini", "Vector Search", "Cloud Run", "Cloud Storage"],
+    "location": "us-central1",
+    "demo_images": ["demos/screenshots/slide_49.png"],
+    "source_slides": "Deck slide 49 (Feature Differentiation Screenshot)"
+  },
+  {
+    "name": "gemini_robotics_er_model",
+    "title": "Gemini Robotics ER Model",
+    "product_tag": "Model",
+    "domain": "robot_foundation_models_edge",
+    "domain_display": "Robot Foundation Models & Edge",
+    "domain_icon": "\ud83e\udd16",
+    "description": "Uses Gemini Robotics ER 2 / Gemini Robotics 2 embodied reasoning foundation models to translate natural-language TODO lists into sequenced robot capabilities with 3D spatial reasoning, pointing, grasp affordance prediction, and visual inspection. Cloud VLA backbone with local action decoder.",
+    "kpis": ["Task Plan Success: >= 85%", "Integration Time: days vs months", "Operator Tablet Interventions: -70%"],
+    "prompts": ["Inspect all gauges on floor 2 and report any out-of-range readings.", "Pick up the red pen and put it in the organizer.", "Break down 'tidy the desk' into robot skills."],
+    "tables": [],
+    "stack": ["Gemini Robotics ER 2", "Gemini Robotics 2", "Vertex AI Endpoints"],
+    "location": "us-central1",
+    "demo_mp4": "demos/model/gemini_robotics_er_model.mp4",
+    "demo_html": "https://gemini-robotic-er2-242017771503.us-central1.run.app/",
+    "source_slides": "Deck slide 81 (GeminiRobotics_robot-dog.mp4)"
+  },
+  {
+    "name": "gemma_on_device_robot_brain",
+    "title": "Gemma 4 On-Device Multilingual Robot Brain",
+    "product_tag": "Model",
+    "domain": "robot_foundation_models_edge",
+    "domain_display": "Robot Foundation Models & Edge",
+    "domain_icon": "\ud83e\udd16",
+    "description": "Offline reasoning, function calling, vision and speech on edge hardware in 140+ languages with Gemma 4 / Gemma 3n / TranslateGemma. Hybrid deployment across on-robot, GDC Edge (in-facility) and Agent Platform endpoints (cloud).",
+    "kpis": ["On-device Latency: < 200 ms", "Offline Availability: 100%", "Languages Supported: 140+"],
+    "prompts": ["Answer this Korean voice command offline and call the open_door tool.", "Which workloads should run on-robot vs GDC Edge vs cloud?", "Fine-tune Gemma on our maintenance manuals for the edge controller."],
+    "tables": [],
+    "stack": ["Gemma 4", "Gemma 3n", "TranslateGemma", "GDC Edge", "Coral Edge TPU"],
+    "location": "edge",
+    "demo_images": ["demos/screenshots/slide_71.png", "demos/screenshots/slide_73.png"],
+    "demo_html": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
+    "source_slides": "Deck slides 71, 73"
+  },
+  {
+    "name": "scalable_physics_simulation",
+    "title": "Scalable Physics Simulation (MuJoCo / Isaac Sim)",
+    "product_tag": "AI Infra",
+    "domain": "sim_to_real_synthetic",
+    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
+    "domain_icon": "\ud83c\udf10",
+    "description": "Massively parallel physics simulation and digital twin runtime on Google Cloud: runs thousands of concurrent MuJoCo MJX / MJWarp environments on Cloud TPU & GPU or NVIDIA Isaac Sim / Isaac Lab on G4 (RTX PRO 6000) VMs orchestrated via GKE for high-fidelity sensor rendering and Sim-to-Real domain randomization.",
+    "kpis": ["Simulation Time Reduction: up to 14x", "Parallel Environments: 4,096+ per node", "Sim-to-Real Transfer Gap: < 8%"],
+    "prompts": ["Launch 4,096 parallel MuJoCo MJX environments on TPU for humanoid locomotion simulation.", "Provision an auto-scaling GKE node pool of G4 (RTX PRO 6000) VMs for Isaac Sim photorealistic rendering.", "Export randomized multi-camera trajectories from simulation to Cloud Storage."],
+    "tables": [],
+    "stack": ["MuJoCo MJX / MJWarp", "NVIDIA Isaac Sim", "G4 VMs (RTX PRO 6000)", "GKE", "Cloud TPU"],
+    "location": "us-central1",
+    "demo_mp4": "demos/ai-infra/scalable_physics_simulation.mp4",
+    "source_slides": "Deck slides 55-58, 66, 112 (Genie 3 Sim Demo)"
+  },
+  {
+    "name": "embodied_rl_model_training",
+    "title": "Embodied AI & RL Model Training",
+    "product_tag": "AI Infra",
+    "domain": "robot_foundation_models_edge",
+    "domain_display": "Robot Foundation Models & Edge",
+    "domain_icon": "\ud83e\udd16",
+    "description": "Large-scale distributed Reinforcement Learning (RL), Imitation Learning (IL), and VLA foundation model post-training on Google Cloud AI Hypercomputer (GPU H100/B200 & TPU pods) with Dynamic Workload Scheduler (DWS) and Vertex AI Training. Reference benchmark: 10x faster RL policy convergence for Unitree G1.",
+    "kpis": ["RL Training Speedup: up to 10x", "Compute Cost Savings: up to 50% with DWS", "Checkpoint-to-HIL Eval: < 15 mins"],
+    "prompts": ["Schedule a distributed RL training job for Unitree G1 locomotion across 64 GPUs using DWS.", "Fine-tune our VLA manipulation checkpoint on the latest 500 hours of curated teleop & synthetic data.", "Register the converged policy checkpoint to Vertex AI Model Registry for HIL safety evaluation."],
+    "tables": [],
+    "stack": ["AI Hypercomputer (GPU / TPU)", "Vertex AI Training", "GKE + DWS", "Isaac Lab RL", "Vertex AI Model Registry"],
+    "location": "us-central1",
+    "demo_images": ["demos/screenshots/slide_61.png", "demos/screenshots/slide_60.png"],
+    "source_slides": "Deck slides 60-61, 66"
+  },
+  {
+    "name": "data_collection_annotation_ops",
+    "title": "Data Collection & Annotation Ops Intelligence",
+    "product_tag": "Gemini Enterprise",
+    "full_display_name": "Robot Data Operations: Data Collection & Annotation Ops Intelligence",
+    "domain": "robot_data_ops",
+    "domain_display": "Robot Data Operations & Teleoperation",
+    "domain_icon": "\ud83e\uddbe",
+    "description": "Connects Gemini Enterprise to robot data lakes (Cloud Storage, BigQuery) and labeling pipeline trackers. Enables operations leads and data engineers to monitor collection volume, teleoperation hours, annotation stages, and QA verification velocity via natural language.",
+    "kpis": [
+      "Teleoperation Collection Hours: >= 450 hrs/wk",
+      "Annotation QA Verification Rate: >= 96.5%",
+      "Collection Site Quota Adherence: >= 94.0%"
+    ],
+    "prompts": [
+      "How many total hours and video clips were collected this week across all household robot setups?",
+      "What percentage of the 'cloth folding' dataset has been QA-verified versus our monthly target?",
+      "Which collection sites are falling behind on multi-object manipulation quotas?"
+    ],
+    "tables": [
+      "teleop_session_logs",
+      "annotation_task_pipeline",
+      "qa_verification_velocity"
+    ],
+    "location": "us-central1",
+    "demo_html": "demos/gemini-enterprise/robot_data_ops/data_collection_annotation_ops.html",
+    "demo_mp4": "demos/gemini-enterprise/robot_data_ops/data_collection_annotation_ops.mp4",
+    "readme": "domains/robot_data_ops/agents/data_collection_annotation_ops/README.md"
+  },
+  {
+    "name": "multimodal_eval_failure_diagnostics",
+    "title": "Multimodal Evaluation & Failure Root Cause Analysis",
+    "product_tag": "Gemini Enterprise",
+    "full_display_name": "Policy Evaluation: Multimodal Evaluation & Failure Root Cause Analysis",
+    "domain": "policy_eval_diagnostics",
+    "domain_display": "Policy Evaluation & Failure Diagnostics",
+    "domain_icon": "\ud83d\udd2c",
+    "description": "Leverages Gemini Enterprise's multimodal retrieval capabilities across evaluation rollout videos, metric tables, and run logs. Helps policy engineers query task success rates, diagnose edge-case failures, and retrieve exact rollout segments showing policy errors.",
+    "kpis": [
+      "Task Success Rate (Kitchen/Dishwashing): >= 88.0%",
+      "Grasping Failure Rate (Reflective/Clear): < 4.2%",
+      "Kinematic Singularity MTTR: < 15 mins"
+    ],
+    "prompts": [
+      "What is the overall success rate for dishwashing tasks in kitchen environments over the last 30 days?",
+      "What are the top 3 root causes for grasping failures on transparent or reflective objects?",
+      "Find and summarize all evaluation runs where the robot arm experienced kinematic singularities or slip errors."
+    ],
+    "tables": [
+      "eval_rollout_metrics",
+      "failure_root_causes",
+      "joint_singularity_events"
+    ],
+    "location": "us-central1",
+    "demo_html": "demos/gemini-enterprise/policy_eval_diagnostics/multimodal_eval_failure_diagnostics.html",
+    "demo_mp4": "demos/gemini-enterprise/policy_eval_diagnostics/multimodal_eval_failure_diagnostics.mp4",
+    "readme": "domains/policy_eval_diagnostics/agents/multimodal_eval_failure_diagnostics/README.md"
+  },
+  {
+    "name": "synthetic_scene_curation_copilot",
+    "title": "Synthetic Scene & Edge-Case Curation Copilot",
+    "product_tag": "Gemini Enterprise",
+    "full_display_name": "Sim-to-Real: Synthetic Scene & Edge-Case Curation Copilot",
+    "domain": "sim_to_real_synthetic",
+    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
+    "domain_icon": "\ud83c\udf10",
+    "description": "Bridges real-world failure logs with 3D simulation asset repositories. Translates natural language descriptions of real-world edge cases into simulation configurations (lighting variations, clutter density, friction parameters) to augment low-data regimes.",
+    "kpis": [
+      "Low-Data Scenario Augmentation: >= 100% coverage",
+      "Domain Randomization Fidelity: >= 92.0%",
+      "3D Asset Geometry Retrieval Precision: >= 95.0%"
+    ],
+    "prompts": [
+      "Which real-world manipulation scenarios have fewer than 20 hours of training data and need synthetic augmentation?",
+      "Generate domain randomization parameters to replicate the low-light kitchen failure cases observed in trial logs.",
+      "What 3D assets in our asset library match the object geometries that failed during recent bin-picking runs?"
+    ],
+    "tables": [
+      "edge_case_real_trials",
+      "sim_asset_library",
+      "domain_randomization_configs"
+    ],
+    "location": "us-central1",
+    "demo_html": "demos/gemini-enterprise/sim_to_real_synthetic/synthetic_scene_curation_copilot.html",
+    "demo_mp4": "demos/gemini-enterprise/sim_to_real_synthetic/synthetic_scene_curation_copilot.mp4",
+    "readme": "domains/sim_to_real_synthetic/agents/synthetic_scene_curation_copilot/README.md"
+  },
+  {
+    "name": "fleet_diagnostics_hardware_maintenance",
+    "title": "Fleet Diagnostics & Hardware Maintenance Assistant",
+    "product_tag": "Gemini Enterprise",
+    "full_display_name": "Fleet Telemetry: Fleet Diagnostics & Hardware Maintenance Assistant",
+    "domain": "fleet_telemetry_maintenance",
+    "domain_display": "Fleet Telemetry & Predictive Maintenance",
+    "domain_icon": "\u2699\ufe0f",
+    "description": "Grounds Gemini Enterprise on high-frequency joint telemetry, error logs, and hardware repair SOPs. Enables field technicians and hardware engineers to troubleshoot anomalies, anticipate component fatigue, and obtain step-by-step repair guidance.",
+    "kpis": [
+      "Thermal & Backlash Anomaly Detection: > 99.0% recall",
+      "Sensor Recalibration Efficiency: < 20 mins",
+      "Fleet Hardware Availability: >= 98.5% uptime"
+    ],
+    "prompts": [
+      "Are any robot units showing abnormal motor temperature spikes or joint backlash over the last 48 hours?",
+      "What is the step-by-step recalibration procedure for the wrist force-torque sensor on Robot Model X?",
+      "Summarize the maintenance history, error codes, and replaced actuators for Unit #082."
+    ],
+    "tables": [
+      "joint_telemetry_streams",
+      "actuator_maintenance_history",
+      "force_torque_calibration_logs"
+    ],
+    "location": "us-central1",
+    "demo_html": "demos/gemini-enterprise/fleet_telemetry_maintenance/fleet_diagnostics_hardware_maintenance.html",
+    "demo_mp4": "demos/gemini-enterprise/fleet_telemetry_maintenance/fleet_diagnostics_hardware_maintenance.mp4",
+    "readme": "domains/fleet_telemetry_maintenance/agents/fleet_diagnostics_hardware_maintenance/README.md"
+  },
+  {
+    "name": "embodied_ai_safety_audit",
+    "title": "Embodied AI Safety Audit & Release Readiness Agent",
+    "product_tag": "Gemini Enterprise",
+    "full_display_name": "Safety & Compliance: Embodied AI Safety Audit & Release Readiness Agent",
+    "domain": "safety_compliance_release",
+    "domain_display": "Safety, Compliance & Policy Release",
+    "domain_icon": "\ud83d\udee1\ufe0f",
+    "description": "Integrates pre-deployment benchmark evaluations, ISO/OSHA robotic safety standards, and out-of-distribution (OOD) stress tests. Automatically generates safety audit summaries and verifies compliance before weights are flashed to edge hardware.",
+    "kpis": [
+      "Torque & Collision Safety Compliance: 100% pass rate",
+      "Human-in-the-Loop Safety Benchmark Delta: >= 0% regression",
+      "Release Gate Audit Automation: < 5 mins"
+    ],
+    "prompts": [
+      "Does model checkpoint 'manipulation-v4.3' pass our maximum torque and dynamic collision safety limits?",
+      "Summarize benchmark differences between checkpoint 'v4.2' and 'v4.3' across human-in-the-loop safety tests.",
+      "Generate a deployment readiness report and safety checklist for pushing the new warehouse palletizing policy."
+    ],
+    "tables": [
+      "model_safety_benchmarks",
+      "iso_compliance_evals",
+      "deployment_gate_checklists"
+    ],
+    "location": "us-central1",
+    "demo_html": "demos/gemini-enterprise/safety_compliance_release/embodied_ai_safety_audit.html",
+    "demo_mp4": "demos/gemini-enterprise/safety_compliance_release/embodied_ai_safety_audit.mp4",
+    "readme": "domains/safety_compliance_release/agents/embodied_ai_safety_audit/README.md"
+  }
+];
+    let activeDomain = 'all';
+    let activeProduct = 'all';
+    let searchQuery = '';
+
+    // DOM Elements
+    const agentGrid = document.getElementById('agentGrid');
+    const resultsCount = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    const domainPills = document.getElementById('domainPills');
+    const productPills = document.getElementById('productPills');
+
+    // Video Modal Elements
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const modalAgentTitle = document.getElementById('modalAgentTitle');
+    const modalProductBadge = document.getElementById('modalProductBadge');
+    const modalDomainBadge = document.getElementById('modalDomainBadge');
+    const modalRegionBadge = document.getElementById('modalRegionBadge');
+    const modalAgentDesc = document.getElementById('modalAgentDesc');
+    const modalWalkthroughLink = document.getElementById('modalWalkthroughLink');
+
+    // Architecture Modal Elements
+    const archBtn = document.getElementById('archBtn');
+    const archModal = document.getElementById('archModal');
+    const archModalCloseBtn = document.getElementById('archModalCloseBtn');
+
+    // Theme Elements
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+
+    // Theme Management
+    function updateThemeButton(theme) {
+      if (theme === 'dark') {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Light';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Dark';
+      }
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('physicalai_agents_theme', next);
+      localStorage.setItem('telco_agents_theme', next);
+      updateThemeButton(next);
+    });
+
+    updateThemeButton(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    // Product class helper
+    function getProductClass(tag) {
+      if (!tag) return 'gemini-enterprise';
+      const t = tag.toLowerCase().trim();
+      if (t === 'gemini enterprise' || t === 'ge') return 'gemini-enterprise';
+      if (t === 'agent platform' || t === 'geap') return 'agent-platform';
+      if (t === 'data' || t === 'da/db' || t === 'dadb') return 'data';
+      if (t === 'model') return 'model';
+      if (t === 'ai infra' || t === 'infra & sim' || t === 'infra' || t === 'sim') return 'infra-sim';
+      return 'gemini-enterprise';
+    }
+
+    // Dynamic Filter Counts
+    function updateFilterCounts() {
+      document.querySelectorAll('.domain-btn').forEach(btn => {
+        const d = btn.getAttribute('data-domain');
+        const countSpan = btn.querySelector('.domain-count');
+        if (countSpan) {
+          const cnt = d === 'all' ? AGENTS_DATA.length : AGENTS_DATA.filter(a => a.domain === d).length;
+          countSpan.textContent = cnt;
+        }
+      });
+
+      document.querySelectorAll('.product-btn').forEach(btn => {
+        const p = btn.getAttribute('data-product');
+        const countSpan = btn.querySelector('.product-count');
+        if (countSpan) {
+          const cnt = p === 'all' ? AGENTS_DATA.length : AGENTS_DATA.filter(a => a.product_tag && a.product_tag.toLowerCase() === p.toLowerCase()).length;
+          countSpan.textContent = cnt;
+        }
+      });
+    }
+
+    // Render Cards
+    function renderAgents() {
+      const q = searchQuery.toLowerCase().trim();
+      const filtered = AGENTS_DATA.filter(a => {
+        const matchDomain = (activeDomain === 'all' || a.domain === activeDomain);
+        if (!matchDomain) return false;
+        const matchProduct = (activeProduct === 'all' || (a.product_tag && a.product_tag.toUpperCase() === activeProduct.toUpperCase()));
+        if (!matchProduct) return false;
+        if (!q) return true;
+
+        const inTitle = a.title.toLowerCase().includes(q);
+        const inDesc = a.description.toLowerCase().includes(q);
+        const inDomain = a.domain_display.toLowerCase().includes(q);
+        const inProduct = (a.product_tag || '').toLowerCase().includes(q);
+        const inKpis = a.kpis.some(k => k.toLowerCase().includes(q));
+        const inPrompts = a.prompts.some(p => p.toLowerCase().includes(q));
+        const inTables = a.tables.some(t => t.toLowerCase().includes(q));
+        const inStack = (a.stack || []).some(s => s.toLowerCase().includes(q));
+
+        return inTitle || inDesc || inDomain || inProduct || inKpis || inPrompts || inTables || inStack;
+      });
+
+      resultsCount.innerHTML = `Showing <strong>${filtered.length}</strong> of ${AGENTS_DATA.length} agents & solutions`;
+
+      if (filtered.length === 0) {
+        agentGrid.innerHTML = '';
+        noResults.style.display = 'block';
+        return;
+      }
+
+      noResults.style.display = 'none';
+      agentGrid.innerHTML = filtered.map(a => `
+        <article class="agent-card" data-agent="${a.name}">
+          <div class="card-top">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="badge-product badge-product-${getProductClass(a.product_tag)}">${a.product_tag || 'GE'}</span>
+              <span class="badge-domain">${a.domain_icon} ${a.domain_display}</span>
+            </div>
+            <span class="badge-region">${a.location}</span>
+          </div>
+          <h3 class="card-title">${a.title}</h3>
+          <p class="card-desc">${a.description}</p>
+          
+          <div class="kpi-row">
+            ${a.kpis.map(k => `<span class="kpi-pill">🎯 ${k}</span>`).join('')}
+          </div>
+
+          <div class="prompts-container">
+            <button class="prompts-toggle" onclick="togglePrompts(this)">
+              <span>Sample Prompts (${a.prompts.length})</span>
+              <span>▼</span>
+            </button>
+            <div class="prompts-list">
+              ${a.prompts.map(p => `<div class="prompt-item">"${p}"</div>`).join('')}
+            </div>
+          </div>
+
+          ${(a.stack && a.stack.length) ? `
+          <div class="kpi-row" title="Google Cloud stack">
+            ${a.stack.map(s => `<span class="badge-region">${s}</span>`).join('')}
+          </div>` : ''}
+
+          <div class="card-actions">
+            ${(a.demo_mp4 || a.demo_embed) ? `
+            <button class="btn-watch" onclick="openVideoModal('${a.name}')">
+              <span>🎬</span> Watch Demo
+            </button>` : (a.demo_images && a.demo_images.length) ? `
+            <button class="btn-watch" onclick="openVideoModal('${a.name}')">
+              <span>🖼️</span> View Slide Demo
+            </button>` : (!a.demo_html ? `
+            <span class="btn-watch" style="opacity:0.55; cursor:default;" title="Demo coming soon">
+              <span>🚧</span> Demo Coming Soon
+            </span>` : '')}
+            ${a.demo_html ? `
+            <a href="${a.demo_html}" class="btn-showcase" target="_blank" rel="noopener noreferrer">
+              <span>⚡</span> ${a.demo_html.includes('run.app') ? 'Live Demo' : (a.demo_html.startsWith('http') ? 'Case / Link' : (a.demo_mp4 ? 'Walkthrough' : 'Live Demo'))}
+            </a>` : ''}
+            ${a.readme ? `
+            <a href="${a.readme}" class="btn-doc" title="View Documentation">
+              <span>📖</span>
+            </a>` : ''}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Toggle Prompts Accordion
+    function togglePrompts(btn) {
+      const list = btn.nextElementSibling;
+      const isOpen = list.classList.contains('open');
+      if (isOpen) {
+        list.classList.remove('open');
+        btn.querySelector('span:last-child').textContent = '▼';
+      } else {
+        list.classList.add('open');
+        btn.querySelector('span:last-child').textContent = '▲';
+      }
+    }
+
+    // Search Input Handling
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      searchClear.style.display = searchQuery ? 'block' : 'none';
+      renderAgents();
+    });
+
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClear.style.display = 'none';
+      renderAgents();
+      searchInput.focus();
+    });
+
+    // Product Pill Handling
+    productPills.addEventListener('click', (e) => {
+      const btn = e.target.closest('.product-btn');
+      if (!btn) return;
+      document.querySelectorAll('.product-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeProduct = btn.getAttribute('data-product');
+      renderAgents();
+    });
+
+    // Domain Pill Handling
+    domainPills.addEventListener('click', (e) => {
+      const btn = e.target.closest('.domain-btn');
+      if (!btn) return;
+      document.querySelectorAll('.domain-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeDomain = btn.getAttribute('data-domain');
+      renderAgents();
+    });
+
+    function resetFilters() {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClear.style.display = 'none';
+      activeDomain = 'all';
+      activeProduct = 'all';
+      document.querySelectorAll('.domain-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.domain-btn[data-domain="all"]').classList.add('active');
+      document.querySelectorAll('.product-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('.product-btn[data-product="all"]').classList.add('active');
+      renderAgents();
+    }
+
+    // Video / Slide Modal
+    const modalImageGallery = document.getElementById('modalImageGallery');
+
+    function selectModalSlide(index, images) {
+      if (!modalImageGallery) return;
+      const imgEl = modalImageGallery.querySelector('#modalActiveSlideImg');
+      if (imgEl && images[index]) {
+        imgEl.src = images[index];
+      }
+      modalImageGallery.querySelectorAll('.slide-tab-btn').forEach((btn, idx) => {
+        if (idx === index) {
+          btn.style.background = 'var(--accent-blue)';
+          btn.style.color = '#fff';
+          btn.style.borderColor = 'var(--accent-blue)';
+        } else {
+          btn.style.background = 'rgba(255,255,255,0.08)';
+          btn.style.color = '#e8eaed';
+          btn.style.borderColor = 'rgba(255,255,255,0.18)';
+        }
+      });
+    }
+
+    function openVideoModal(agentName) {
+      const agent = AGENTS_DATA.find(a => a.name === agentName);
+      if (!agent) return;
+
+      modalAgentTitle.textContent = agent.title;
+      modalProductBadge.textContent = agent.product_tag || 'GE';
+      modalProductBadge.className = `badge-product badge-product-${getProductClass(agent.product_tag)}`;
+      modalDomainBadge.textContent = `${agent.domain_icon} ${agent.domain_display}`;
+      modalRegionBadge.textContent = agent.location;
+      modalAgentDesc.textContent = agent.description;
+      if (agent.demo_html) {
+        modalWalkthroughLink.href = agent.demo_html;
+        modalWalkthroughLink.style.display = 'inline-flex';
+      } else {
+        modalWalkthroughLink.style.display = 'none';
+      }
+
+      if (modalImageGallery) {
+        modalImageGallery.style.display = 'none';
+        modalImageGallery.innerHTML = '';
+      }
+
+      if (agent.demo_embed) {
+        modalVideo.pause();
+        modalVideo.src = '';
+        modalVideo.style.display = 'none';
+        modalIframe.src = agent.demo_embed;
+        modalIframe.style.display = 'block';
+      } else if (agent.demo_mp4) {
+        modalIframe.src = '';
+        modalIframe.style.display = 'none';
+        modalVideo.style.display = 'block';
+        modalVideo.src = agent.demo_mp4;
+        modalVideo.play().catch(() => {});
+      } else if (agent.demo_images && agent.demo_images.length > 0 && modalImageGallery) {
+        modalVideo.pause();
+        modalVideo.src = '';
+        modalVideo.style.display = 'none';
+        modalIframe.src = '';
+        modalIframe.style.display = 'none';
+        modalImageGallery.style.display = 'flex';
+        const tabsHtml = agent.demo_images.length > 1 ? `
+          <div style="display:flex; gap:8px; margin-bottom:10px; justify-content:center; flex-wrap:wrap;">
+            ${agent.demo_images.map((src, i) => `
+              <button type="button" class="slide-tab-btn" data-idx="${i}" style="padding:5px 12px; border-radius:6px; border:1px solid ${i === 0 ? 'var(--accent-blue)' : 'rgba(255,255,255,0.18)'}; background:${i === 0 ? 'var(--accent-blue)' : 'rgba(255,255,255,0.08)'}; color:#fff; font-size:0.8rem; font-weight:600; cursor:pointer;">
+                Slide ${i + 1} (${src.split('/').pop().replace('slide_', 'P').replace('.png', '')})
+              </button>
+            `).join('')}
+          </div>
+        ` : '';
+        modalImageGallery.innerHTML = `
+          ${tabsHtml}
+          <div style="width:100%; display:flex; justify-content:center; align-items:center; overflow:hidden; border-radius:8px; border:1px solid rgba(255,255,255,0.12); background:#0d1117;">
+            <img id="modalActiveSlideImg" src="${agent.demo_images[0]}" alt="${agent.title}" style="width:100%; height:auto; max-height:68vh; object-fit:contain; display:block;" />
+          </div>
+        `;
+        modalImageGallery.querySelectorAll('.slide-tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectModalSlide(parseInt(btn.getAttribute('data-idx'), 10), agent.demo_images);
+          });
+        });
+      }
+
+      videoModal.classList.add('open');
+    }
+
+    function closeVideoModal() {
+      modalVideo.pause();
+      modalVideo.src = '';
+      if (modalIframe) modalIframe.src = '';
+      if (modalImageGallery) {
+        modalImageGallery.style.display = 'none';
+        modalImageGallery.innerHTML = '';
+      }
+      videoModal.classList.remove('open');
+    }
+
+    modalCloseBtn.addEventListener('click', closeVideoModal);
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) closeVideoModal();
+    });
+
+    // Architecture Modal
+    archBtn.addEventListener('click', () => archModal.classList.add('open'));
+    archModalCloseBtn.addEventListener('click', () => archModal.classList.remove('open'));
+    archModal.addEventListener('click', (e) => {
+      if (e.target === archModal) archModal.classList.remove('open');
+    });
+
+    // Global Escape Key to close modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+        archModal.classList.remove('open');
+      }
+    });
+
+    // Initial Setup
+    updateFilterCounts();
+    renderAgents();
+  </script>
+</body>
+</html>

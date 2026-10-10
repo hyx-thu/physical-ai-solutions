@@ -1,0 +1,6 @@
+asset_id,asset_name,geometry_class,mesh_fidelity,material_type,dimensions_cm,source_format
+AST-701,mesh_stemware_tall_v2.usd,Glassware_Stem,Ultra_High_100k_Poly,Refractive_Glass,8.5x8.5x22.0,OpenUSD
+AST-702,mesh_carafe_fluted.usd,Glassware_Carafe,High_65k_Poly,Refractive_Glass,12.0x12.0x28.0,OpenUSD
+AST-703,mesh_cutlery_mirror_fork.usd,Flatware_Fork,High_45k_Poly,Specular_Chrome,2.5x1.5x20.0,OpenUSD
+AST-704,mesh_dishcloth_terry.usd,Deformable_Fabric,Cloth_FEM_Mesh,Woven_Cotton,30.0x30.0x0.4,OpenUSD
+AST-705,mesh_skillet_castiron.usd,Cookware_Pan,Medium_35k_Poly,Textured_Iron,28.0x45.0x6.0,OpenUSD

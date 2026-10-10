@@ -1,0 +1,6 @@
+failure_id,eval_id,task_name,object_type,surface_property,failure_category,root_cause_summary,segment_start_sec,segment_end_sec
+FAIL-101,EVAL-502,dishwashing_loading,wine_glass,transparent_specular,Perception_Depth_Dropout,Depth sensor ray dropout causing gripper offset,22.4,28.1
+FAIL-102,EVAL-505,dishwashing_loading,stainless_pan,reflective_smooth,Grasp_Slip,Low tactile friction threshold during high acceleration,31.0,36.5
+FAIL-103,EVAL-502,dishwashing_loading,large_tray,matte_plastic,Kinematic_Singularity,Wrist pitch Joint 5 saturated near limit at bottom of sink,45.2,52.0
+FAIL-104,EVAL-512,glass_sorting,crystal_tumbler,transparent_specular,Perception_Depth_Dropout,RGB-D pointcloud noise caused premature finger closure,18.2,23.0
+FAIL-105,EVAL-519,cup_stacking,ceramic_mug,glazed_porcelain,Grasp_Slip,Dynamic torque compensation lag during rotational tilt,14.8,19.5

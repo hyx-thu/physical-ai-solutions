@@ -1,0 +1,28 @@
+{
+  "eval_set": [
+    {
+      "query": "Does model checkpoint 'manipulation-v4.3' pass our maximum torque and dynamic collision safety limits?",
+      "expected_intent": "data_insights",
+      "assertions": [
+        {
+          "type": "contains_number",
+          "description": "Response contains grounded quantitative metrics"
+        },
+        {
+          "type": "no_hallucination",
+          "description": "Response is grounded in BigQuery tools"
+        }
+      ]
+    },
+    {
+      "query": "What are the ISO 10218-1/2 and ISO/TS 15066 safety requirements for collaborative robot maximum speed and contact force?",
+      "expected_intent": "market_context",
+      "assertions": [
+        {
+          "type": "grounded_search",
+          "description": "Response references external robotics standards/benchmarks"
+        }
+      ]
+    }
+  ]
+}
