@@ -40,17 +40,19 @@ agents:
     product_tag: "Agent Platform"
     display_name: "Gemini Live Interaction"
     demo_mp4: "demos/agent-platform/gemini_live_interaction.mp4"
+    demo_html: "https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-3.8-live"
     source_slides: "15-17, 21"
     tables: []
 
-  robot_skills_action_agent:
-    domain: human_robot_interaction
-    agent_id: rsaa
+  gemini_robotics_er_model:
+    domain: robot_foundation_models_edge
+    agent_id: germ
     location: us-central1
-    product_tag: "Agent Platform"
-    display_name: "Robot Skills & Action Agent"
-    demo_html: "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/"
-    source_slides: "11, 16, 18, 79"
+    product_tag: "Model"
+    display_name: "Gemini Robotics ER Model"
+    demo_mp4: "demos/model/gemini_robotics_er_model.mp4"
+    demo_html: "https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-robotics-er-2-streaming-preview"
+    source_slides: "74-81"
     tables: []
 
   robotics_auto_labeling:
@@ -73,6 +75,27 @@ agents:
       - "demos/screenshots/slide_25.png"
       - "demos/screenshots/slide_26.png"
     source_slides: "25, 26"
+    tables: []
+
+  real2sim_digital_twin_retargeting:
+    domain: sim_to_real_synthetic
+    agent_id: r2sr
+    location: us-central1
+    product_tag: "AI Infra"
+    display_name: "Real2Sim Reconstruction & 500Hz Dexterous Twin"
+    demo_mp4: "demos/model/real2sim_human_view.mp4"
+    demo_html: "https://real2sim-242017771503.us-central1.run.app/"
+    source_slides: "Gemini 4 Argon Deck slides 6-9"
+    tables: []
+
+  robot_skills_action_agent:
+    domain: human_robot_interaction
+    agent_id: rsaa
+    location: us-central1
+    product_tag: "Agent Platform"
+    display_name: "Robot Skills & Action Agent"
+    demo_html: "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/"
+    source_slides: "11, 16, 18, 79"
     tables: []
 
   multiview_vla_validation_judge:
@@ -144,17 +167,6 @@ agents:
     source_slides: "47-50"
     tables: []
 
-  gemini_robotics_er_model:
-    domain: robot_foundation_models_edge
-    agent_id: germ
-    location: us-central1
-    product_tag: "Model"
-    display_name: "Gemini Robotics ER Model"
-    demo_mp4: "demos/model/gemini_robotics_er_model.mp4"
-    demo_html: "https://gemini-robotic-er2-242017771503.us-central1.run.app/"
-    source_slides: "74-81"
-    tables: []
-
   gemma_on_device_robot_brain:
     domain: robot_foundation_models_edge
     agent_id: godb
@@ -166,17 +178,6 @@ agents:
       - "demos/screenshots/slide_73.png"
     demo_html: "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
     source_slides: "71, 73"
-    tables: []
-
-  real2sim_digital_twin_retargeting:
-    domain: sim_to_real_synthetic
-    agent_id: r2sr
-    location: us-central1
-    product_tag: "AI Infra"
-    display_name: "Real2Sim Reconstruction & 500Hz Dexterous Twin"
-    demo_mp4: "demos/model/real2sim_human_view.mp4"
-    demo_html: "https://real2sim-242017771503.us-central1.run.app/"
-    source_slides: "Gemini 4 Argon Deck slides 6-9"
     tables: []
 
   scalable_physics_simulation:

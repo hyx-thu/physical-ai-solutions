@@ -11,26 +11,26 @@ Each agent and solution answers operational, scientific, and engineering questio
 > 💡 **Tip**: Click on any section accordion below to collapse/expand its deployed solution roster, links, product tags, and KPI focus.
 
 <details open>
-<summary><b>🧩 Agent Platform, Data, Model & AI Infra Solutions (14 Catalog Entries)</b></summary>
+<summary><b>🧩 Agent Platform, Data, Model & AI Infra Solutions (15 Catalog Entries)</b></summary>
 <br/>
 
 > **Source**: *Great Opportunities for South Korea in Physical AI* deck — "Google Cloud a key stack for Physical AI" pillars (Interaction, AI Agent & Apps, Auto Label, Data Curation, Training, Simulation, Synth Data Gen, Robotic Model / On-Device).
 
 | No. | Product | Solution | Domain | Core Stack | Demo / Slides |
 | :--- | :---: | :--- | :--- | :--- | :---: |
-| 1 | `Agent Platform` | **Gemini Live Interaction** | 🗣️ Human-Robot Interaction | Gemini Live API, Vertex AI RAG Engine, Multimodal Embeddings, Agent Engine | [🎬 Unitree Live Demo](demos/agent-platform/gemini_live_interaction.mp4) (15–17, 21) |
-| 2 | `Agent Platform` | **Robot Skills & Action Agent** | 🗣️ Human-Robot Interaction | ADK, Agent Engine, Connectors | [⚡ Case / Link](https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/) (11, 16, 18, 79) |
+| 1 | `Agent Platform` | **Gemini Live Interaction** | 🗣️ Human-Robot Interaction | Gemini Live API, Vertex AI RAG Engine, Multimodal Embeddings, Agent Engine | [🎬 Unitree Live Demo](demos/agent-platform/gemini_live_interaction.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-3.8-live" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (15–17, 21) |
+| 2 | `Model` | **Gemini Robotics ER Model** | 🤖 Robot Foundation Models & Edge | Gemini Robotics ER 2 / Gemini Robotics 2 | [🎬 Slide 81 Video](demos/model/gemini_robotics_er_model.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-robotics-er-2-streaming-preview" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (74–81) |
 | 3 | `Agent Platform` | **Robotics Auto-Labeling** | 🏷️ Auto-Labeling & Data Curation | Gemini Flash, Batch Prediction, GCS, BigQuery | [🎬 Auto-Label + JSON Demo](demos/agent-platform/robotics_auto_labeling.mp4) (23, 24, 26) |
 | 4 | `Agent Platform` | **Self-tuning Agent for Auto-Labeling** | 🏷️ Auto-Labeling & Data Curation | ADK, Gemini, Agent Platform Evaluation | [🖼️ Slides P25 / P26](demos/screenshots/slide_25.png) (25, 26) |
-| 5 | `Agent Platform` | **Multi-View VLA Validation Judge** | 🔬 Policy Evaluation | Gemini, Agent Engine | [🖼️ Slides P29 / P30](demos/screenshots/slide_29.png) (29–30) |
-| 6 | `Agent Platform` | **Synthetic Data Factory (Veo / Nano Banana / Imagen)** | 🌐 Sim-to-Real & Synthetic | Agent Platform, Veo 3, Nano Banana 2, Imagen 4, Genie 3 | [🎬 Slide 36 Veo AMR Video](demos/agent-platform/synthetic_data_factory.mp4) / <a href="https://robotic-prompt-generator-811235746107.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (32–39) |
-| 7 | `Data` | **Multimodal Robot Data Vector Search** | 🏷️ Auto-Labeling & Data Curation | gemini-embedding-2, Vector Search | [🎬 VectorSearch Demo](demos/data/multimodal_robot_vector_search.mp4) (44–45) |
-| 8 | `Data` | **Smart Storage Auto-Annotate + BigQuery Insights** | 🏷️ Auto-Labeling & Data Curation | GCS Auto Annotate, Storage Insights, BigQuery | [🖼️ Slide P51](demos/screenshots/slide_51.png) (51) |
-| 9 | `Data` | **Robot Data Flywheel Platform** | ⚙️ Fleet Telemetry | Pub/Sub, Dataflow, BigQuery, Cloud Storage, Looker | [🎬 Demo Video](demos/data/robot_data_flywheel_platform.mp4) (43, 52, 101, 118) |
-| 10 | `Data` | **GCP Smart Vision (Edge Video to Semantic Alerts)** | 🏷️ Auto-Labeling & Data Curation | Gemma/Tiny-Gemma, Gemini, Vector Search, Cloud Run | [🖼️ Slide P49 Screenshot](demos/screenshots/slide_49.png) (47–50) |
-| 11 | `Model` | **Gemini Robotics ER Model** | 🤖 Robot Foundation Models & Edge | Gemini Robotics ER 2 / Gemini Robotics 2 | [🎬 Slide 81 Video](demos/model/gemini_robotics_er_model.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (74–81) |
-| 12 | `Model` | **Gemma 4 On-Device Multilingual Robot Brain** | 🤖 Robot Foundation Models & Edge | Gemma 4, Gemma 3n, GDC Edge, Coral | [🖼️ Slides P71 / P73](demos/screenshots/slide_71.png) / [⚡ Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) (71, 73) |
-| 13 | `AI Infra` | **Real2Sim Reconstruction & 500Hz Dexterous Twin** | 🌐 Sim-to-Real & Synthetic | Gemini 4 Argon, MuJoCo / MJWarp, MuJoCo WASM, MediaPipe, Cloud Run | [🎬 4 Real2Sim Videos](demos/model/real2sim_human_view.mp4) / <a href="https://real2sim-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (Argon 6–9) |
+| 5 | `AI Infra` | **Real2Sim Reconstruction & 500Hz Dexterous Twin** | 🌐 Sim-to-Real & Synthetic | Gemini 4 Argon, MuJoCo / MJWarp, MuJoCo WASM, MediaPipe, Cloud Run | [🎬 4 Real2Sim Videos](demos/model/real2sim_human_view.mp4) / <a href="https://real2sim-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (Argon 6–9) |
+| 6 | `Agent Platform` | **Robot Skills & Action Agent** | 🗣️ Human-Robot Interaction | ADK, Agent Engine, Connectors | [⚡ Case / Link](https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/) (11, 16, 18, 79) |
+| 7 | `Agent Platform` | **Multi-View VLA Validation Judge** | 🔬 Policy Evaluation | Gemini, Agent Engine | [🖼️ Slides P29 / P30](demos/screenshots/slide_29.png) (29–30) |
+| 8 | `Agent Platform` | **Synthetic Data Factory (Veo / Nano Banana / Imagen)** | 🌐 Sim-to-Real & Synthetic | Agent Platform, Veo 3, Nano Banana 2, Imagen 4, Genie 3 | [🎬 Slide 36 Veo AMR Video](demos/agent-platform/synthetic_data_factory.mp4) / <a href="https://robotic-prompt-generator-811235746107.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (32–39) |
+| 9 | `Data` | **Multimodal Robot Data Vector Search** | 🏷️ Auto-Labeling & Data Curation | gemini-embedding-2, Vector Search | [🎬 VectorSearch Demo](demos/data/multimodal_robot_vector_search.mp4) (44–45) |
+| 10 | `Data` | **Smart Storage Auto-Annotate + BigQuery Insights** | 🏷️ Auto-Labeling & Data Curation | GCS Auto Annotate, Storage Insights, BigQuery | [🖼️ Slide P51](demos/screenshots/slide_51.png) (51) |
+| 11 | `Data` | **Robot Data Flywheel Platform** | ⚙️ Fleet Telemetry | Pub/Sub, Dataflow, BigQuery, Cloud Storage, Looker | [🎬 Demo Video](demos/data/robot_data_flywheel_platform.mp4) (43, 52, 101, 118) |
+| 12 | `Data` | **GCP Smart Vision (Edge Video to Semantic Alerts)** | 🏷️ Auto-Labeling & Data Curation | Gemma/Tiny-Gemma, Gemini, Vector Search, Cloud Run | [🖼️ Slide P49 Screenshot](demos/screenshots/slide_49.png) (47–50) |
+| 13 | `Model` | **Gemma 4 On-Device Multilingual Robot Brain** | 🤖 Robot Foundation Models & Edge | Gemma 4, Gemma 3n, GDC Edge, Coral | [🖼️ Slides P71 / P73](demos/screenshots/slide_71.png) / [⚡ Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) (71, 73) |
 | 14 | `AI Infra` | **Scalable Physics Simulation (MuJoCo / Isaac Sim)** | 🌐 Sim-to-Real & Synthetic | MuJoCo MJX / MJWarp, NVIDIA Isaac Sim, G4 VMs, GKE, TPU | [🎬 Genie 3 Sim Demo](demos/ai-infra/scalable_physics_simulation.mp4) (55–58, 66, 112) |
 | 15 | `AI Infra` | **Embodied AI & RL Model Training** | 🤖 Robot Foundation Models & Edge | AI Hypercomputer (GPU/TPU), Vertex AI Training, GKE + DWS, Isaac Lab RL | [🖼️ Slides P61 / P60](demos/screenshots/slide_61.png) (60–61, 66) |
 

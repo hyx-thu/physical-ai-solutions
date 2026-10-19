@@ -994,7 +994,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-pill">
-      <span>🚀</span> 19 Agents & Solutions across Agent Platform, Data, Model, AI Infra &amp; Gemini Enterprise
+      <span>🚀</span> 20 Agents & Solutions across Agent Platform, Data, Model, AI Infra &amp; Gemini Enterprise
     </div>
     <h1 class="hero-title">
       Agent and solutions for <span>Physical AI</span>
@@ -1006,7 +1006,7 @@
     <!-- Platform Stats -->
     <div class="stat-row">
       <div class="stat-card">
-        <div class="stat-number">19</div>
+        <div class="stat-number">20</div>
         <div class="stat-label">Agents & Solutions</div>
       </div>
       <div class="stat-card">
@@ -1022,7 +1022,7 @@
         <div class="stat-label">BigQuery Tables</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">7</div>
+        <div class="stat-number">9</div>
         <div class="stat-label">Live Demos</div>
       </div>
     </div>
@@ -1233,23 +1233,25 @@
     "stack": ["Gemini Live API", "Vertex AI RAG Engine", "Multimodal Embeddings", "Agent Engine", "Google Search Grounding"],
     "location": "global",
     "demo_mp4": "demos/agent-platform/gemini_live_interaction.mp4",
+    "demo_html": "https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-3.8-live",
     "source_slides": "Deck slides 15-17, 21 (Unitree Live Demo)"
   },
   {
-    "name": "robot_skills_action_agent",
-    "title": "Robot Skills & Action Agent",
-    "product_tag": "Agent Platform",
-    "domain": "human_robot_interaction",
-    "domain_display": "Human-Robot Interaction & Agents",
-    "domain_icon": "\ud83d\udde3\ufe0f",
-    "description": "ADK agent that takes actions on behalf of users through connectors (POI lookup, booking, messaging, ecosystem apps), captures expert experience as reusable skills, and escalates to a human operator when confidence is low.",
-    "kpis": ["Autonomous Action Success: >= 92%", "Human Escalation Rate: < 8%", "Skill Reuse Across Fleet: >= 70%"],
-    "prompts": ["Book a table for two near the museum at 7pm and send the confirmation to my phone.", "Which of our reusable skills can handle a lost-item request in the lobby?", "Escalate this complaint to a human agent with a conversation summary."],
+    "name": "gemini_robotics_er_model",
+    "title": "Gemini Robotics ER Model",
+    "product_tag": "Model",
+    "domain": "robot_foundation_models_edge",
+    "domain_display": "Robot Foundation Models & Edge",
+    "domain_icon": "\ud83e\udd16",
+    "description": "Uses Gemini Robotics ER 2 / Gemini Robotics 2 embodied reasoning foundation models to translate natural-language TODO lists into sequenced robot capabilities with 3D spatial reasoning, pointing, grasp affordance prediction, and visual inspection. Cloud VLA backbone with local action decoder.",
+    "kpis": ["Task Plan Success: >= 85%", "Integration Time: days vs months", "Operator Tablet Interventions: -70%"],
+    "prompts": ["Inspect all gauges on floor 2 and report any out-of-range readings.", "Pick up the red pen and put it in the organizer.", "Break down 'tidy the desk' into robot skills."],
     "tables": [],
-    "stack": ["Agent Builder (ADK)", "Agent Engine", "Application Integration Connectors"],
+    "stack": ["Gemini Robotics ER 2", "Gemini Robotics 2", "Vertex AI Endpoints"],
     "location": "us-central1",
-    "demo_html": "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/",
-    "source_slides": "Deck slides 11, 16, 18, 79"
+    "demo_mp4": "demos/model/gemini_robotics_er_model.mp4",
+    "demo_html": "https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-robotics-er-2-streaming-preview",
+    "source_slides": "Deck slide 81 (GeminiRobotics_robot-dog.mp4)"
   },
   {
     "name": "robotics_auto_labeling",
@@ -1282,6 +1284,45 @@
     "location": "us-central1",
     "demo_images": ["demos/screenshots/slide_25.png", "demos/screenshots/slide_26.png"],
     "source_slides": "Deck slides 25, 26"
+  },
+  {
+    "name": "real2sim_digital_twin_retargeting",
+    "title": "Real2Sim Reconstruction & 500Hz Dexterous Twin",
+    "product_tag": "AI Infra",
+    "domain": "sim_to_real_synthetic",
+    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
+    "domain_icon": "\ud83c\udf10",
+    "description": "End-to-end Real2Sim reconstruction powered by Gemini 4 Argon and MuJoCo / MJWarp / WebAssembly: turns robot teleop episodes, egocentric human manipulation videos, or paper sketches into physics-calibrated 500 Hz digital twins with compound convex-decomposed meshes, 22-DoF 5-finger dexterous hand retargeting, visuo-tactile force alignment, and zero-shot Sim-to-Real hardware transfer.",
+    "kpis": ["Dexterous Physics Rate: 500 Hz (0 welds)", "Real-World Cornhole Transfer: 7/7 sinks", "ERQA Embodied Reasoning: 87% (#1)"],
+    "prompts": ["Reconstruct a 500 Hz MuJoCo scene from this egocentric human video with compound convex-decomposed container meshes and retarget 3D hand keypoints to 22-DoF five-fingered hands.", "Align the MuJoCo digital twin with the real robot teleop episode across 3 RGB camera views and Sharpa fingertip 3D tactile force vectors with zero sim cheating after t=0.", "Turn this hand-drawn sketch or human cornhole video into a verified mujoco_warp trajectory and optimize stance stability for real humanoid transfer."],
+    "tables": [],
+    "stack": ["Gemini 4 Argon", "MuJoCo / MJWarp", "MuJoCo WebAssembly (WASM)", "MediaPipe Hand Landmarker", "Cloud Run"],
+    "location": "us-central1",
+    "demo_mp4": "demos/model/real2sim_human_view.mp4",
+    "demo_videos": [
+      { "label": "1. Human View to Sim (500Hz Dexterous)", "src": "demos/model/real2sim_human_view.mp4" },
+      { "label": "2. Robot View to Sim (Visuo-Tactile)", "src": "demos/model/real2sim_robot_view.mp4" },
+      { "label": "3. Sketch to Sim (76-DoF Throw)", "src": "demos/model/real2sim_sketch_to_sim.mp4" },
+      { "label": "4. Video-to-Sim-to-Real (Apollo 7/7)", "src": "demos/model/real2sim_apollo_cornhole.mp4" }
+    ],
+    "demo_html": "https://real2sim-242017771503.us-central1.run.app/",
+    "source_slides": "Gemini 4 Argon Deck slides 6-9 (Real2Sim 4 Cases)"
+  },
+  {
+    "name": "robot_skills_action_agent",
+    "title": "Robot Skills & Action Agent",
+    "product_tag": "Agent Platform",
+    "domain": "human_robot_interaction",
+    "domain_display": "Human-Robot Interaction & Agents",
+    "domain_icon": "\ud83d\udde3\ufe0f",
+    "description": "ADK agent that takes actions on behalf of users through connectors (POI lookup, booking, messaging, ecosystem apps), captures expert experience as reusable skills, and escalates to a human operator when confidence is low.",
+    "kpis": ["Autonomous Action Success: >= 92%", "Human Escalation Rate: < 8%", "Skill Reuse Across Fleet: >= 70%"],
+    "prompts": ["Book a table for two near the museum at 7pm and send the confirmation to my phone.", "Which of our reusable skills can handle a lost-item request in the lobby?", "Escalate this complaint to a human agent with a conversation summary."],
+    "tables": [],
+    "stack": ["Agent Builder (ADK)", "Agent Engine", "Application Integration Connectors"],
+    "location": "us-central1",
+    "demo_html": "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/",
+    "source_slides": "Deck slides 11, 16, 18, 79"
   },
   {
     "name": "multiview_vla_validation_judge",
@@ -1381,23 +1422,6 @@
     "source_slides": "Deck slide 49 (Feature Differentiation Screenshot)"
   },
   {
-    "name": "gemini_robotics_er_model",
-    "title": "Gemini Robotics ER Model",
-    "product_tag": "Model",
-    "domain": "robot_foundation_models_edge",
-    "domain_display": "Robot Foundation Models & Edge",
-    "domain_icon": "\ud83e\udd16",
-    "description": "Uses Gemini Robotics ER 2 / Gemini Robotics 2 embodied reasoning foundation models to translate natural-language TODO lists into sequenced robot capabilities with 3D spatial reasoning, pointing, grasp affordance prediction, and visual inspection. Cloud VLA backbone with local action decoder.",
-    "kpis": ["Task Plan Success: >= 85%", "Integration Time: days vs months", "Operator Tablet Interventions: -70%"],
-    "prompts": ["Inspect all gauges on floor 2 and report any out-of-range readings.", "Pick up the red pen and put it in the organizer.", "Break down 'tidy the desk' into robot skills."],
-    "tables": [],
-    "stack": ["Gemini Robotics ER 2", "Gemini Robotics 2", "Vertex AI Endpoints"],
-    "location": "us-central1",
-    "demo_mp4": "demos/model/gemini_robotics_er_model.mp4",
-    "demo_html": "https://gemini-robotic-er2-242017771503.us-central1.run.app/",
-    "source_slides": "Deck slide 81 (GeminiRobotics_robot-dog.mp4)"
-  },
-  {
     "name": "gemma_on_device_robot_brain",
     "title": "Gemma 4 On-Device Multilingual Robot Brain",
     "product_tag": "Model",
@@ -1413,29 +1437,6 @@
     "demo_images": ["demos/screenshots/slide_71.png", "demos/screenshots/slide_73.png"],
     "demo_html": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
     "source_slides": "Deck slides 71, 73"
-  },
-  {
-    "name": "real2sim_digital_twin_retargeting",
-    "title": "Real2Sim Reconstruction & 500Hz Dexterous Twin",
-    "product_tag": "AI Infra",
-    "domain": "sim_to_real_synthetic",
-    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
-    "domain_icon": "\ud83c\udf10",
-    "description": "End-to-end Real2Sim reconstruction powered by Gemini 4 Argon and MuJoCo / MJWarp / WebAssembly: turns robot teleop episodes, egocentric human manipulation videos, or paper sketches into physics-calibrated 500 Hz digital twins with compound convex-decomposed meshes, 22-DoF 5-finger dexterous hand retargeting, visuo-tactile force alignment, and zero-shot Sim-to-Real hardware transfer.",
-    "kpis": ["Dexterous Physics Rate: 500 Hz (0 welds)", "Real-World Cornhole Transfer: 7/7 sinks", "ERQA Embodied Reasoning: 87% (#1)"],
-    "prompts": ["Reconstruct a 500 Hz MuJoCo scene from this egocentric human video with compound convex-decomposed container meshes and retarget 3D hand keypoints to 22-DoF five-fingered hands.", "Align the MuJoCo digital twin with the real robot teleop episode across 3 RGB camera views and Sharpa fingertip 3D tactile force vectors with zero sim cheating after t=0.", "Turn this hand-drawn sketch or human cornhole video into a verified mujoco_warp trajectory and optimize stance stability for real humanoid transfer."],
-    "tables": [],
-    "stack": ["Gemini 4 Argon", "MuJoCo / MJWarp", "MuJoCo WebAssembly (WASM)", "MediaPipe Hand Landmarker", "Cloud Run"],
-    "location": "us-central1",
-    "demo_mp4": "demos/model/real2sim_human_view.mp4",
-    "demo_videos": [
-      { "label": "1. Human View to Sim (500Hz Dexterous)", "src": "demos/model/real2sim_human_view.mp4" },
-      { "label": "2. Robot View to Sim (Visuo-Tactile)", "src": "demos/model/real2sim_robot_view.mp4" },
-      { "label": "3. Sketch to Sim (76-DoF Throw)", "src": "demos/model/real2sim_sketch_to_sim.mp4" },
-      { "label": "4. Video-to-Sim-to-Real (Apollo 7/7)", "src": "demos/model/real2sim_apollo_cornhole.mp4" }
-    ],
-    "demo_html": "https://real2sim-242017771503.us-central1.run.app/",
-    "source_slides": "Gemini 4 Argon Deck slides 6-9 (Real2Sim 4 Cases)"
   },
   {
     "name": "scalable_physics_simulation",
