@@ -168,6 +168,17 @@ agents:
     source_slides: "71, 73"
     tables: []
 
+  real2sim_digital_twin_retargeting:
+    domain: sim_to_real_synthetic
+    agent_id: r2sr
+    location: us-central1
+    product_tag: "AI Infra"
+    display_name: "Real2Sim Reconstruction & 500Hz Dexterous Twin"
+    demo_mp4: "demos/model/real2sim_human_view.mp4"
+    demo_html: "https://real2sim-242017771503.us-central1.run.app/"
+    source_slides: "Gemini 4 Argon Deck slides 6-9"
+    tables: []
+
   scalable_physics_simulation:
     domain: sim_to_real_synthetic
     agent_id: spsi

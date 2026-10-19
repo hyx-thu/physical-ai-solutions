@@ -1132,6 +1132,7 @@
       </div>
       <div class="modal-body">
         <div class="video-container" id="modalVideoBox">
+          <div id="modalVideoTabs" style="display:none; width:100%; background:#0B0F19; padding:10px 12px 6px; box-sizing:border-box; gap:8px; justify-content:center; flex-wrap:wrap; border-bottom:1px solid rgba(255,255,255,0.12);"></div>
           <video id="modalVideo" src="" controls autoplay playsinline preload="metadata">
             Your browser does not support HTML5 video.
           </video>
@@ -1412,6 +1413,29 @@
     "demo_images": ["demos/screenshots/slide_71.png", "demos/screenshots/slide_73.png"],
     "demo_html": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
     "source_slides": "Deck slides 71, 73"
+  },
+  {
+    "name": "real2sim_digital_twin_retargeting",
+    "title": "Real2Sim Reconstruction & 500Hz Dexterous Twin",
+    "product_tag": "AI Infra",
+    "domain": "sim_to_real_synthetic",
+    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
+    "domain_icon": "\ud83c\udf10",
+    "description": "End-to-end Real2Sim reconstruction powered by Gemini 4 Argon and MuJoCo / MJWarp / WebAssembly: turns robot teleop episodes, egocentric human manipulation videos, or paper sketches into physics-calibrated 500 Hz digital twins with compound convex-decomposed meshes, 22-DoF 5-finger dexterous hand retargeting, visuo-tactile force alignment, and zero-shot Sim-to-Real hardware transfer.",
+    "kpis": ["Dexterous Physics Rate: 500 Hz (0 welds)", "Real-World Cornhole Transfer: 7/7 sinks", "ERQA Embodied Reasoning: 87% (#1)"],
+    "prompts": ["Reconstruct a 500 Hz MuJoCo scene from this egocentric human video with compound convex-decomposed container meshes and retarget 3D hand keypoints to 22-DoF five-fingered hands.", "Align the MuJoCo digital twin with the real robot teleop episode across 3 RGB camera views and Sharpa fingertip 3D tactile force vectors with zero sim cheating after t=0.", "Turn this hand-drawn sketch or human cornhole video into a verified mujoco_warp trajectory and optimize stance stability for real humanoid transfer."],
+    "tables": [],
+    "stack": ["Gemini 4 Argon", "MuJoCo / MJWarp", "MuJoCo WebAssembly (WASM)", "MediaPipe Hand Landmarker", "Cloud Run"],
+    "location": "us-central1",
+    "demo_mp4": "demos/model/real2sim_human_view.mp4",
+    "demo_videos": [
+      { "label": "1. Human View to Sim (500Hz Dexterous)", "src": "demos/model/real2sim_human_view.mp4" },
+      { "label": "2. Robot View to Sim (Visuo-Tactile)", "src": "demos/model/real2sim_robot_view.mp4" },
+      { "label": "3. Sketch to Sim (76-DoF Throw)", "src": "demos/model/real2sim_sketch_to_sim.mp4" },
+      { "label": "4. Video-to-Sim-to-Real (Apollo 7/7)", "src": "demos/model/real2sim_apollo_cornhole.mp4" }
+    ],
+    "demo_html": "https://real2sim-242017771503.us-central1.run.app/",
+    "source_slides": "Gemini 4 Argon Deck slides 6-9 (Real2Sim 4 Cases)"
   },
   {
     "name": "scalable_physics_simulation",
@@ -1830,6 +1854,36 @@
 
     // Video / Slide Modal
     const modalImageGallery = document.getElementById('modalImageGallery');
+    const modalVideoTabs = document.getElementById('modalVideoTabs');
+    let activeModalVideos = [];
+    let activeModalVideoIdx = 0;
+
+    function selectModalVideo(index) {
+      if (!activeModalVideos || !activeModalVideos[index]) return;
+      activeModalVideoIdx = index;
+      modalVideo.src = activeModalVideos[index].src;
+      modalVideo.play().catch(() => {});
+      if (modalVideoTabs) {
+        modalVideoTabs.querySelectorAll('.video-tab-btn').forEach((btn, idx) => {
+          if (idx === index) {
+            btn.style.background = 'var(--accent-blue)';
+            btn.style.color = '#fff';
+            btn.style.borderColor = 'var(--accent-blue)';
+          } else {
+            btn.style.background = 'rgba(255,255,255,0.08)';
+            btn.style.color = '#e8eaed';
+            btn.style.borderColor = 'rgba(255,255,255,0.18)';
+          }
+        });
+      }
+    }
+
+    modalVideo.addEventListener('ended', () => {
+      if (activeModalVideos && activeModalVideos.length > 1) {
+        const nextIdx = (activeModalVideoIdx + 1) % activeModalVideos.length;
+        selectModalVideo(nextIdx);
+      }
+    });
 
     function selectModalSlide(index, images) {
       if (!modalImageGallery) return;
@@ -1871,6 +1925,12 @@
         modalImageGallery.style.display = 'none';
         modalImageGallery.innerHTML = '';
       }
+      if (modalVideoTabs) {
+        modalVideoTabs.style.display = 'none';
+        modalVideoTabs.innerHTML = '';
+      }
+      activeModalVideos = [];
+      activeModalVideoIdx = 0;
 
       if (agent.demo_embed) {
         modalVideo.pause();
@@ -1882,8 +1942,24 @@
         modalIframe.src = '';
         modalIframe.style.display = 'none';
         modalVideo.style.display = 'block';
-        modalVideo.src = agent.demo_mp4;
-        modalVideo.play().catch(() => {});
+        if (agent.demo_videos && agent.demo_videos.length > 1 && modalVideoTabs) {
+          activeModalVideos = agent.demo_videos;
+          modalVideoTabs.style.display = 'flex';
+          modalVideoTabs.innerHTML = agent.demo_videos.map((v, i) => `
+            <button type="button" class="video-tab-btn" data-idx="${i}" style="padding:5px 12px; border-radius:6px; border:1px solid ${i === 0 ? 'var(--accent-blue)' : 'rgba(255,255,255,0.18)'}; background:${i === 0 ? 'var(--accent-blue)' : 'rgba(255,255,255,0.08)'}; color:#fff; font-size:0.78rem; font-weight:600; cursor:pointer;">
+              🎬 ${v.label}
+            </button>
+          `).join('');
+          modalVideoTabs.querySelectorAll('.video-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              selectModalVideo(parseInt(btn.getAttribute('data-idx'), 10));
+            });
+          });
+          selectModalVideo(0);
+        } else {
+          modalVideo.src = agent.demo_mp4;
+          modalVideo.play().catch(() => {});
+        }
       } else if (agent.demo_images && agent.demo_images.length > 0 && modalImageGallery) {
         modalVideo.pause();
         modalVideo.src = '';
@@ -1924,6 +2000,11 @@
         modalImageGallery.style.display = 'none';
         modalImageGallery.innerHTML = '';
       }
+      if (modalVideoTabs) {
+        modalVideoTabs.style.display = 'none';
+        modalVideoTabs.innerHTML = '';
+      }
+      activeModalVideos = [];
       videoModal.classList.remove('open');
     }
 

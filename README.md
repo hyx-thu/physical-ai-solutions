@@ -30,8 +30,9 @@ Each agent and solution answers operational, scientific, and engineering questio
 | 10 | `Data` | **GCP Smart Vision (Edge Video to Semantic Alerts)** | 🏷️ Auto-Labeling & Data Curation | Gemma/Tiny-Gemma, Gemini, Vector Search, Cloud Run | [🖼️ Slide P49 Screenshot](demos/screenshots/slide_49.png) (47–50) |
 | 11 | `Model` | **Gemini Robotics ER Model** | 🤖 Robot Foundation Models & Edge | Gemini Robotics ER 2 / Gemini Robotics 2 | [🎬 Slide 81 Video](demos/model/gemini_robotics_er_model.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (74–81) |
 | 12 | `Model` | **Gemma 4 On-Device Multilingual Robot Brain** | 🤖 Robot Foundation Models & Edge | Gemma 4, Gemma 3n, GDC Edge, Coral | [🖼️ Slides P71 / P73](demos/screenshots/slide_71.png) / [⚡ Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) (71, 73) |
-| 13 | `AI Infra` | **Scalable Physics Simulation (MuJoCo / Isaac Sim)** | 🌐 Sim-to-Real & Synthetic | MuJoCo MJX / MJWarp, NVIDIA Isaac Sim, G4 VMs, GKE, TPU | [🎬 Genie 3 Sim Demo](demos/ai-infra/scalable_physics_simulation.mp4) (55–58, 66, 112) |
-| 14 | `AI Infra` | **Embodied AI & RL Model Training** | 🤖 Robot Foundation Models & Edge | AI Hypercomputer (GPU/TPU), Vertex AI Training, GKE + DWS, Isaac Lab RL | [🖼️ Slides P61 / P60](demos/screenshots/slide_61.png) (60–61, 66) |
+| 13 | `AI Infra` | **Real2Sim Reconstruction & 500Hz Dexterous Twin** | 🌐 Sim-to-Real & Synthetic | Gemini 4 Argon, MuJoCo / MJWarp, MuJoCo WASM, MediaPipe, Cloud Run | [🎬 4 Real2Sim Videos](demos/model/real2sim_human_view.mp4) / <a href="https://real2sim-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (Argon 6–9) |
+| 14 | `AI Infra` | **Scalable Physics Simulation (MuJoCo / Isaac Sim)** | 🌐 Sim-to-Real & Synthetic | MuJoCo MJX / MJWarp, NVIDIA Isaac Sim, G4 VMs, GKE, TPU | [🎬 Genie 3 Sim Demo](demos/ai-infra/scalable_physics_simulation.mp4) (55–58, 66, 112) |
+| 15 | `AI Infra` | **Embodied AI & RL Model Training** | 🤖 Robot Foundation Models & Edge | AI Hypercomputer (GPU/TPU), Vertex AI Training, GKE + DWS, Isaac Lab RL | [🖼️ Slides P61 / P60](demos/screenshots/slide_61.png) (60–61, 66) |
 
 </details>
 
