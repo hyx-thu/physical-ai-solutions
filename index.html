@@ -994,19 +994,19 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-pill">
-      <span>🚀</span> 20 Agents & Solutions across Agent Platform, Data, Model, AI Infra &amp; Gemini Enterprise
+      <span>🚀</span> 23 Agents & Solutions across Agent Platform, Data, Model, AI Infra &amp; Gemini Enterprise
     </div>
     <h1 class="hero-title">
       Agent and solutions for <span>Physical AI</span>
     </h1>
     <p class="hero-desc">
-      A unified enterprise catalog spanning Agent Platform, Data, Model, AI Infra, and Gemini Enterprise solutions for Physical AI — from multimodal human-robot interaction, auto-labeling and robot data flywheels, to synthetic data, scalable simulation, RL training, and foundation models.
+      A unified enterprise catalog spanning Agent Platform, Data, Model, AI Infra, and Gemini Enterprise solutions for Physical AI — from multimodal human-robot interaction, video reasoning, and robot data flywheels, to Genie 4 world models, Real2Sim twins, closed-loop control, and autonomous self-improvement.
     </p>
 
     <!-- Platform Stats -->
     <div class="stat-row">
       <div class="stat-card">
-        <div class="stat-number">20</div>
+        <div class="stat-number">23</div>
         <div class="stat-label">Agents & Solutions</div>
       </div>
       <div class="stat-card">
@@ -1022,7 +1022,7 @@
         <div class="stat-label">BigQuery Tables</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">9</div>
+        <div class="stat-number">11</div>
         <div class="stat-label">Live Demos</div>
       </div>
     </div>
@@ -1046,7 +1046,7 @@
         <span class="filter-label">🏷️ Product Type</span>
         <div class="product-pills" id="productPills">
           <button class="product-btn active" data-product="all">
-            All Products <span class="product-count">19</span>
+            All Products <span class="product-count">23</span>
           </button>
           <button class="product-btn" data-product="Agent Platform">
             <span class="badge-dot" style="background:#38bdf8;"></span> Agent Platform <span class="product-count">6</span>
@@ -1055,10 +1055,10 @@
             <span class="badge-dot" style="background:#34d399;"></span> Data <span class="product-count">4</span>
           </button>
           <button class="product-btn" data-product="Model">
-            <span class="badge-dot" style="background:#f472b6;"></span> Model <span class="product-count">2</span>
+            <span class="badge-dot" style="background:#f472b6;"></span> Model <span class="product-count">4</span>
           </button>
           <button class="product-btn" data-product="AI Infra">
-            <span class="badge-dot" style="background:#fbbf24;"></span> AI Infra <span class="product-count">2</span>
+            <span class="badge-dot" style="background:#fbbf24;"></span> AI Infra <span class="product-count">4</span>
           </button>
           <button class="product-btn" data-product="Gemini Enterprise">
             <span class="badge-dot" style="background:#c084fc;"></span> Gemini Enterprise <span class="product-count">5</span>
@@ -1071,16 +1071,16 @@
         <span class="filter-label">🌐 Robotics Domain</span>
         <div class="domain-pills" id="domainPills">
           <button class="domain-btn active" data-domain="all">
-            <span>🌐</span> All Domains <span class="domain-count">19</span>
+            <span>🌐</span> All Domains <span class="domain-count">23</span>
           </button>
           <button class="domain-btn" data-domain="human_robot_interaction">
             <span>🗣️</span> Human-Robot Interaction & Agents <span class="domain-count">2</span>
           </button><button class="domain-btn" data-domain="data_labeling_curation">
             <span>🏷️</span> Auto-Labeling & Data Curation <span class="domain-count">5</span>
           </button><button class="domain-btn" data-domain="sim_to_real_synthetic">
-            <span>🌐</span> Sim-to-Real & Synthetic Data Pipeline <span class="domain-count">3</span>
+            <span>🌐</span> Sim-to-Real & Synthetic Data Pipeline <span class="domain-count">5</span>
           </button><button class="domain-btn" data-domain="robot_foundation_models_edge">
-            <span>🤖</span> Robot Foundation Models & Edge <span class="domain-count">3</span>
+            <span>🤖</span> Robot Foundation Models & Edge <span class="domain-count">5</span>
           </button><button class="domain-btn" data-domain="policy_eval_diagnostics">
             <span>🔬</span> Policy Evaluation & Failure Diagnostics <span class="domain-count">2</span>
           </button><button class="domain-btn" data-domain="fleet_telemetry_maintenance">
@@ -1097,7 +1097,7 @@
     <!-- Results Header -->
     <div class="results-bar">
       <div class="results-count" id="resultsCount">
-        Showing <strong>19</strong> of 19 agents & solutions
+        Showing <strong>23</strong> of 23 agents & solutions
       </div>
     </div>
 
@@ -1169,7 +1169,7 @@
           </div>
           <div class="arch-arrow">▼</div>
           <div class="arch-node">
-            <div class="arch-node-title"><span>🧠</span> Root Orchestrator LlmAgent (gemini-3.5-flash)</div>
+            <div class="arch-node-title"><span>🧠</span> Root Orchestrator LlmAgent (gemini-4-hydrogen / gemini-3.8-flash)</div>
             <div class="arch-node-desc">Determines intent, executes session callbacks (set_current_date), and orchestrates sub-agent routing.</div>
           </div>
           <div class="arch-arrow">▼</div>
@@ -1226,48 +1226,55 @@
     "domain": "human_robot_interaction",
     "domain_display": "Human-Robot Interaction & Agents",
     "domain_icon": "\ud83d\udde3\ufe0f",
-    "description": "Real-time low-latency multimodal interaction (streaming camera vision, voice/audio & spatial awareness) combined with Enterprise Multimodal RAG. Grounds interruptible, emotion-aware robot conversations on facility SOPs, product/equipment manuals, spatial maps, and persistent user memory across 40+ languages.",
-    "kpis": ["Multimodal Round-trip Latency: < 800 ms", "RAG Grounded Factuality: >= 96%", "Supported Languages: 40+ live"],
-    "prompts": ["Look at the control panel in front of me, retrieve the wiring SOP via RAG, and guide me step by step.", "Switch to the bilingual concierge persona, check live store inventory via RAG, and escort the guest.", "Remember this user's preferences and summarize our multimodal visual inspection into the shift log."],
+    "description": "Real-time low-latency multimodal interaction (streaming camera vision, voice/audio, Live Avatar & physical humanoid co-speech gestures) combined with Enterprise Hybrid RAG. Grounds interruptible, emotion-aware concierge robots (e.g., Smart Hospital & Flagship Bank lobbies) on facility SOPs, wayfinding maps, and strict zero-hallucination out-of-KB guardrails across 40+ languages.",
+    "kpis": ["Multimodal Round-trip Latency: < 800 ms", "KB Provenance & Out-of-KB Guard: 100%", "Supported Languages: 40+ live"],
+    "prompts": ["Look at the control panel in front of me, retrieve the wiring SOP via RAG, and guide me step by step.", "Switch to the Smart Hospital atrium concierge persona, answer wayfinding questions from grounded KB entries, and escort the visitor.", "Remember this guest's preferences and summarize our multimodal visual inspection into the shift log."],
     "tables": [],
-    "stack": ["Gemini Live API", "Vertex AI RAG Engine", "Multimodal Embeddings", "Agent Engine", "Google Search Grounding"],
+    "stack": ["Gemini 3.8 Live", "Agent Search & Hybrid RAG", "Multimodal Embeddings", "Agent Runtime", "Google Maps & Search Grounding"],
     "location": "global",
     "demo_mp4": "demos/agent-platform/gemini_live_interaction.mp4",
     "demo_html": "https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-3.8-live",
-    "source_slides": "Deck slides 15-17, 21 (Unitree Live Demo)"
+    "source_slides": "Deck slides 15-17, 21 & Nov 2026 Live Avatar / Humanoid Concierge"
   },
   {
     "name": "gemini_robotics_er_model",
-    "title": "Gemini Robotics ER Model",
+    "title": "Gemini Robotics 2 & ER 2 Model",
     "product_tag": "Model",
     "domain": "robot_foundation_models_edge",
     "domain_display": "Robot Foundation Models & Edge",
     "domain_icon": "\ud83e\udd16",
-    "description": "Uses Gemini Robotics ER 2 / Gemini Robotics 2 embodied reasoning foundation models to translate natural-language TODO lists into sequenced robot capabilities with 3D spatial reasoning, pointing, grasp affordance prediction, and visual inspection. Cloud VLA backbone with local action decoder.",
+    "description": "Unites the Gemini Robotics 2 foundation model family—Gemini Robotics ER 2 (Public Preview on Gemini Platform for high-level 3D spatial reasoning, pointing, multi-step task planning, and visual inspection), Gemini Robotics 2 VLA, and lightweight Gemini Robotics On-Device 2—translating natural-language TODO lists into closed-loop physical robot execution.",
     "kpis": ["Task Plan Success: >= 85%", "Integration Time: days vs months", "Operator Tablet Interventions: -70%"],
-    "prompts": ["Inspect all gauges on floor 2 and report any out-of-range readings.", "Pick up the red pen and put it in the organizer.", "Break down 'tidy the desk' into robot skills."],
+    "prompts": ["Inspect all gauges on floor 2 and report any out-of-range readings.", "Pick up the phone on the desk and place it next to the laptop with visual verification.", "Break down 'tidy the desk' into sequenced robot manipulation tools and monitor execution."],
     "tables": [],
-    "stack": ["Gemini Robotics ER 2", "Gemini Robotics 2", "Vertex AI Endpoints"],
+    "stack": ["Gemini Robotics ER 2", "Gemini Robotics 2", "Gemini Robotics On-Device 2", "Gemini Enterprise Agent Platform"],
     "location": "us-central1",
     "demo_mp4": "demos/model/gemini_robotics_er_model.mp4",
     "demo_html": "https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-robotics-er-2-streaming-preview",
-    "source_slides": "Deck slide 81 (GeminiRobotics_robot-dog.mp4)"
+    "source_slides": "Deck slide 81 & Gemini Robotics 2 Public Preview"
   },
   {
     "name": "robotics_auto_labeling",
-    "title": "Robotics Auto-Labeling",
+    "title": "Robotics Video Reasoning & Auto-Labeling",
     "product_tag": "Agent Platform",
     "domain": "data_labeling_curation",
     "domain_display": "Auto-Labeling & Data Curation",
     "domain_icon": "\ud83c\udff7\ufe0f",
-    "description": "Hierarchical Gemini auto-labeling of teleop and rollout videos: low-FPS timestamp segmentation, temporal zoom-in action labeling, and an agentic high-FPS 2nd pass. Outputs VLA action JSON, 2D bounding boxes and segmentation masks; optional SFT on 150-500 domain samples.",
-    "kpis": ["Label Throughput: 10x vs manual", "Action Segment Accuracy: >= 90%", "Labeling Cost Reduction: >= 70%"],
-    "prompts": ["Segment this bimanual desk video into atomic actions with start/end timestamps.", "Generate VLA labels for all pick-and-place clips collected yesterday.", "Which clips need a high-FPS second pass because of occlusion?"],
+    "description": "Physics-grounded video reasoning, hierarchical subtask segmentation, and zero-shot value functions with Gemini 4 Argon & Flash: generates 4-level G1-G3 hindsight labels over long-horizon bimanual episodes while downweighting slip/retry loops, plots synchronized 3-view UMI task progress slopes, and outputs VLA action JSON, 2D boxes, and masks across Open X-Embodiment, WGO-Bench & FLORA.",
+    "kpis": ["Throughput: 10x vs manual", "4-Level Hierarchy: G1-G3 + BC QC", "Multi-Cam Sync: 3-View Value Fn"],
+    "prompts": ["Generate 4-level G1-G3 time-aligned hindsight annotations over this 136s ALOHA 2 origami episode and downweight slip retry loops to 0.15x-0.25x.", "Synchronize head, left, and right UMI gripper feeds to plot dense task progress slopes (+ / 0 / -) across 28 activity segments.", "Segment this bimanual manipulation video into atomic subtasks with start/end timestamps and VLA skill JSON."],
     "tables": [],
-    "stack": ["Gemini Flash", "Agent Platform Batch Prediction", "Cloud Storage", "BigQuery"],
+    "stack": ["Gemini 4 Argon", "Gemini 4 Hydrogen / 3.8 Flash", "Batch & Deferred Tier", "Cloud Storage", "BigQuery"],
     "location": "us-central1",
     "demo_mp4": "demos/agent-platform/robotics_auto_labeling.mp4?v=2",
-    "source_slides": "Deck slides 23, 24, 26 (2D Seg & VLA Action Demo)"
+    "demo_videos": [
+      { "label": "1. 2D Seg & VLA Action JSON", "src": "demos/agent-platform/robotics_auto_labeling.mp4?v=2" },
+      { "label": "2. Hindsight Labeling: ALOHA 2 Origami (G1-G3)", "src": "demos/agent-platform/autolabel_aloha_origami.mp4" },
+      { "label": "3. General Value Function: 3-View UMI Progress", "src": "demos/agent-platform/autolabel_umi_value_fn.mp4" },
+      { "label": "4. Stereo Vision: 12-Ball Balance Scale", "src": "demos/agent-platform/autolabel_balance_scale.mp4" }
+    ],
+    "demo_html": "https://robotic-auto-label-242017771503.us-central1.run.app/",
+    "source_slides": "Nov 2026 Deck slide 11 (Argon Hindsight & Value Fn) & slides 23-26"
   },
   {
     "name": "auto_label_prompt_tuning_agent",
@@ -1276,14 +1283,20 @@
     "domain": "data_labeling_curation",
     "domain_display": "Auto-Labeling & Data Curation",
     "domain_icon": "\ud83c\udff7\ufe0f",
-    "description": "Generator/evaluator agent loop that writes a labeling prompt for a task, scores it with or without ground truth, iterates on feedback, then saves the winning prompt as a skill and executes it on the full video set with a quality report.",
-    "kpis": ["Prompt Iterations to Converge: <= 5", "Label Quality Uplift: +15-25%", "Prompt Engineering Time: -80%"],
-    "prompts": ["Optimize a labeling prompt for 'cloth folding' using these 20 ground-truth clips.", "Evaluate the current prompt without ground truth and suggest improvements.", "Run the saved 'drawer opening' skill on the full dataset and report quality."],
+    "description": "5-stage closed-loop Prompt Generator & Evaluator agent ('1 Video & Req -> 2 Prompt Generator -> 3 Execute -> 4 Evaluate -> 5 Skill & Scale'): drafts task-specific video reasoning prompts, auto-selects diverse dev/hold-out clips, scores predictions via Ground Truth or LLM-as-a-Judge across iterative rounds, and promotes the winning pipeline to scale with multi-model leaderboards.",
+    "kpis": ["WGO-Bench Top Score: 92.3% (Argon)", "Converge Iterations: <= 5 rounds", "Prompt Engineering Time: -80%"],
+    "prompts": ["Auto-tune a temporal segmentation prompt on 4 diverse dev videos from WGO-Bench and validate on the locked hold-out split.", "Compare predicted action boundaries vs. human ground truth clip-by-clip and refine edge-case boundary rules.", "Export the winning prompt as a reusable pipeline skill and benchmark Gemini 4 Argon vs. Flash on the leaderboard."],
     "tables": [],
-    "stack": ["Agent Builder (ADK)", "Gemini", "Agent Platform Evaluation"],
+    "stack": ["Agent Builder (ADK)", "Gemini 4 Argon", "Gemini 3.8 Flash", "Agent Platform Evals"],
     "location": "us-central1",
-    "demo_images": ["demos/screenshots/slide_25.png", "demos/screenshots/slide_26.png"],
-    "source_slides": "Deck slides 25, 26"
+    "demo_mp4": "demos/agent-platform/selftune_auto_train_flow.mp4",
+    "demo_videos": [
+      { "label": "1. End-to-End Auto-Train Setup", "src": "demos/agent-platform/selftune_auto_train_flow.mp4" },
+      { "label": "2. Iterative Prompt & Eval Rounds", "src": "demos/agent-platform/selftune_eval_rounds.mp4" },
+      { "label": "3. Episode Playback: Pred vs. GT", "src": "demos/agent-platform/selftune_pred_vs_gt.mp4" },
+      { "label": "4. Scorecards & Model Leaderboard", "src": "demos/agent-platform/selftune_leaderboard.mp4" }
+    ],
+    "source_slides": "Nov 2026 Deck slides 12-13 (Self-tuning Agent UI & Leaderboard)"
   },
   {
     "name": "real2sim_digital_twin_retargeting",
@@ -1292,9 +1305,9 @@
     "domain": "sim_to_real_synthetic",
     "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
     "domain_icon": "\ud83c\udf10",
-    "description": "End-to-end Real2Sim reconstruction powered by Gemini 4 Argon and MuJoCo / MJWarp / WebAssembly: turns robot teleop episodes, egocentric human manipulation videos, or paper sketches into physics-calibrated 500 Hz digital twins with compound convex-decomposed meshes, 22-DoF 5-finger dexterous hand retargeting, visuo-tactile force alignment, and zero-shot Sim-to-Real hardware transfer.",
+    "description": "End-to-end Real2Sim reconstruction powered by Gemini 4 Argon and MuJoCo / MJWarp / WebAssembly: turns robot teleop episodes, egocentric human manipulation videos, or paper sketches into physics-calibrated 500 Hz digital twins with compound convex-decomposed meshes, 20/22-DoF 5-finger dexterous hand retargeting (Unitree Dex5-1 / Sharpa), synced PiP human-vs-sim comparison, visuo-tactile force alignment, and zero-shot Sim-to-Real hardware transfer.",
     "kpis": ["Dexterous Physics Rate: 500 Hz (0 welds)", "Real-World Cornhole Transfer: 7/7 sinks", "ERQA Embodied Reasoning: 87% (#1)"],
-    "prompts": ["Reconstruct a 500 Hz MuJoCo scene from this egocentric human video with compound convex-decomposed container meshes and retarget 3D hand keypoints to 22-DoF five-fingered hands.", "Align the MuJoCo digital twin with the real robot teleop episode across 3 RGB camera views and Sharpa fingertip 3D tactile force vectors with zero sim cheating after t=0.", "Turn this hand-drawn sketch or human cornhole video into a verified mujoco_warp trajectory and optimize stance stability for real humanoid transfer."],
+    "prompts": ["Reconstruct a 500 Hz MuJoCo scene from this egocentric human fruit-sorting video with compound convex-decomposed basket hulls and MediaPipe 21-keypoint retargeting on 5-finger Dex5-1 hands.", "Align the MuJoCo digital twin with the real robot teleop episode across 3 RGB camera views and Sharpa fingertip 3D tactile force vectors with zero sim cheating after t=0.", "Turn this hand-drawn sketch or human cornhole video into a verified mujoco_warp trajectory and optimize stance stability for real humanoid transfer."],
     "tables": [],
     "stack": ["Gemini 4 Argon", "MuJoCo / MJWarp", "MuJoCo WebAssembly (WASM)", "MediaPipe Hand Landmarker", "Cloud Run"],
     "location": "us-central1",
@@ -1306,7 +1319,75 @@
       { "label": "4. Video-to-Sim-to-Real (Apollo 7/7)", "src": "demos/model/real2sim_apollo_cornhole.mp4" }
     ],
     "demo_html": "https://real2sim-242017771503.us-central1.run.app/",
-    "source_slides": "Gemini 4 Argon Deck slides 6-9 (Real2Sim 4 Cases)"
+    "source_slides": "Nov 2026 Deck slides 16-17 & Argon Real2Sim 4 Cases"
+  },
+  {
+    "name": "robot_self_improvement_loop",
+    "title": "Autonomous Robot Self-Improvement & Agentic Research",
+    "product_tag": "Model",
+    "domain": "robot_foundation_models_edge",
+    "domain_display": "Robot Foundation Models & Edge",
+    "domain_icon": "\ud83e\udd16",
+    "description": "Closed-loop robot self-iteration and agentic Real2Sim2Real research powered by Gemini 4 Argon & Gemini Robotics 2.5: (1) builds 9 digital-twin props and a 77-task bimanual curriculum from 1 workspace photo to generate 4,500+ verified trajectories, boosting real hardware VLA success from 56% to 75%; (2) runs a gated Dry-Run -> Hover-Verify -> Autonomous Self-Diagnosis loop on a 6-DoF SO-101 arm to fix grasp failures and reach 3x speed; and (3) reproduces robotics papers & weights in one prompt as Playwright-verified browser MuJoCo WASM labs.",
+    "kpis": ["Real VLA Success Uplift: 56% -> 75%", "Hardware Speedup: 3x (SO-101 Arm)", "Sim Curriculum Scale: 4,500+ episodes"],
+    "prompts": ["From this single overhead RGB workspace photo, reconstruct 9 articulated digital-twin props in MuJoCo, synthesize 4,500+ verified bimanual trajectories across 77 tasks, and fine-tune our real-world VLA checkpoint.", "Run the 3-stage safety & self-improvement loop (Dry-Run pose projection -> Hover-Verify -> Video-log root-cause diagnosis) on the 6-DoF SO-101 arm and optimize pick-and-place speed to >= 2x-3x.", "Read this robotics paper PDF and checkpoint to build a Playwright-verified interactive MuJoCo WebAssembly lab and scrollytelling visual essay in one prompt."],
+    "tables": [],
+    "stack": ["Gemini 4 Argon", "Gemini Robotics 2.5", "MuJoCo / MJWarp", "MuJoCo WebAssembly (WASM)", "Gemini Enterprise Agent Platform"],
+    "location": "us-central1",
+    "demo_mp4": "demos/model/self_improve_sim_vla_75.mp4",
+    "demo_videos": [
+      { "label": "1. Sim Data Gen Boosts Real VLA (56%->75%)", "src": "demos/model/self_improve_sim_vla_75.mp4" },
+      { "label": "2. Hardware Pick & Place Self-Improvement (3x)", "src": "demos/model/self_improve_so101_3x.mp4" },
+      { "label": "3. One-Prompt Paper Reproduction in WASM", "src": "demos/model/self_improve_paper_wasm.mp4" }
+    ],
+    "demo_html": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+    "source_slides": "Nov 2026 Deck slides 20-21 (Self-Improvement & Agentic Real2Sim2Real)"
+  },
+  {
+    "name": "genie4_omni_world_model",
+    "title": "Genie 4 & Gemini Omni World Model Simulation",
+    "product_tag": "AI Infra",
+    "domain": "sim_to_real_synthetic",
+    "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
+    "domain_icon": "\ud83c\udf10",
+    "description": "Interactive 3D world simulation and cross-embodiment data scaling powered by DeepMind Genie 4 and Gemini Omni 1.2 Flash: transforms single lab or workspace photos into steerable real-time 720p interactive 3D worlds, pairs Gemini 4 Argon / 3.8 Flash sequential spatial planning with Genie 4 world execution, and performs zero-drift (dt = 0.00s) egocentric Human-to-Robot 5-fingered embodiment transfer for bimanual manipulation scaling.",
+    "kpis": ["Interactive World Stream: 720p @ 24fps", "Embodiment Transfer Sync: dt = 0.00s", "World Initialization: 1 reference photo"],
+    "prompts": ["Generate an interactive 3D Genie 4 laboratory world from this single photo and steer the UR5 arm through sequential pipetting events.", "Decompose a bimanual humanoid checkers turn into fine-grained spatiotemporal steps with Gemini 4 Argon and render real-time 5-fingered robot execution in Genie 4.", "Convert this 10s egocentric human manipulation video into brushed-silver 5-fingered robotic dexterous hands with frame-exact grasp timing and pixel-locked background."],
+    "tables": [],
+    "stack": ["Genie 4", "Gemini Omni 1.2 Flash", "Gemini 4 Argon", "Gemini 3.8 Flash", "Interactions API"],
+    "location": "global",
+    "demo_mp4": "demos/ai-infra/genie4_ur5_pipetting.mp4",
+    "demo_videos": [
+      { "label": "1. UR5 Lab Pipetting (Gemini + Genie 4)", "src": "demos/ai-infra/genie4_ur5_pipetting.mp4" },
+      { "label": "2. Humanoid Checkers (Argon + Genie 4)", "src": "demos/ai-infra/genie4_humanoid_checkers.mp4" },
+      { "label": "3. Lab World Sim (1 Image -> 3D World)", "src": "demos/ai-infra/genie4_lab_world_sim.mp4" },
+      { "label": "4. Embodiment Transfer (Dual-View Pour-Over)", "src": "demos/ai-infra/genie4_embodiment_coffee.mp4" },
+      { "label": "5. Bimanual Data Scaling (Human -> Robot)", "src": "demos/ai-infra/genie4_bimanual_fruit_scaling.mp4" }
+    ],
+    "demo_html": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+    "source_slides": "Nov 2026 Deck slides 14-15 (Genie 4 x Robotics Demos 1-5)"
+  },
+  {
+    "name": "argon_closed_loop_robot_control",
+    "title": "Zero-Shot & Closed-Loop Robot Control",
+    "product_tag": "Model",
+    "domain": "robot_foundation_models_edge",
+    "domain_display": "Robot Foundation Models & Edge",
+    "domain_icon": "\ud83e\udd16",
+    "description": "Zero-shot multi-turn physical robot control and world-model steering with Gemini 4 Argon—without task-specific robot training data: (1) rehearses hinged foot-pedal bin timing in a MuJoCo twin before orchestrating a 2-agent (foot-verifier & hand-verifier) safety gate on real Boston Dynamics Spot hardware; (2) executes closed-loop tabletop manipulation via a calibrated 2 cm wrist-camera 3D grid harness and HTTP primitives; and (3) steers Gemini Omni video world models turn-by-turn via keyframe audits.",
+    "kpis": ["Task-Specific Demos Needed: 0", "Hardware Verification Swarm: 2 agents", "Visual Servo Harness: 2 cm 3D grid"],
+    "prompts": ["Rehearse stepping on the hinged trash-bin pedal in MuJoCo, then coordinate Spot's rear/front cameras with foot-verifier and hand-verifier agents to dispose of both cans.", "Overlay the calibrated 2 cm world coordinate grid and cyan pinch crosshair onto wrist_cam.png to upright the fallen mug and insert the crumpled napkin closed-loop.", "Audit each rollout keyframe and emit millisecond-timestamped single-axis <omni_prompt> beats until the bimanual arms spell A-R-G-O-N."],
+    "tables": [],
+    "stack": ["Gemini 4 Argon", "Gemini Omni 1.2 Flash", "MuJoCo", "Agent Builder (ADK)", "Gemini Enterprise Agent Platform"],
+    "location": "us-central1",
+    "demo_mp4": "demos/model/control_spot_pedal_bin.mp4",
+    "demo_videos": [
+      { "label": "1. Spot Sim Rehearsal & 2-Agent Hardware Verify", "src": "demos/model/control_spot_pedal_bin.mp4" },
+      { "label": "2. Zero-Shot Wrist-Cam 3D Grid Control", "src": "demos/model/control_zeroshot_grid.mp4" },
+      { "label": "3. Closed-Loop Omni World Model (A-R-G-O-N)", "src": "demos/model/control_omni_argon_planner.mp4" }
+    ],
+    "demo_html": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+    "source_slides": "Nov 2026 Deck slide 19 (Robot Control with Gemini 4 Argon Cases 1-3)"
   },
   {
     "name": "robot_skills_action_agent",
@@ -1319,7 +1400,7 @@
     "kpis": ["Autonomous Action Success: >= 92%", "Human Escalation Rate: < 8%", "Skill Reuse Across Fleet: >= 70%"],
     "prompts": ["Book a table for two near the museum at 7pm and send the confirmation to my phone.", "Which of our reusable skills can handle a lost-item request in the lobby?", "Escalate this complaint to a human agent with a conversation summary."],
     "tables": [],
-    "stack": ["Agent Builder (ADK)", "Agent Engine", "Application Integration Connectors"],
+    "stack": ["Agent Builder (ADK)", "Agent Runtime", "Application Integration Connectors"],
     "location": "us-central1",
     "demo_html": "https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/",
     "source_slides": "Deck slides 11, 16, 18, 79"
@@ -1335,27 +1416,30 @@
     "kpis": ["Manual Video Review Eliminated: >= 90%", "Near-miss Detection Recall: >= 95%", "Debug Cycle Time: -60%"],
     "prompts": ["Score execution quality of trial batch #412 against the planned trajectories.", "Which failures are caused by cross-view inconsistency rather than policy error?", "List all near-miss grasps from the last 1,000 trials with timestamps."],
     "tables": [],
-    "stack": ["Gemini", "Agent Engine", "Cloud Storage", "BigQuery"],
+    "stack": ["Gemini 4 Hydrogen / Argon", "Agent Runtime", "Cloud Storage", "BigQuery"],
     "location": "us-central1",
     "demo_images": ["demos/screenshots/slide_29.png", "demos/screenshots/slide_30.png"],
     "source_slides": "Deck slides 29-30"
   },
   {
     "name": "synthetic_data_factory",
-    "title": "Synthetic Data Factory (Veo / Nano Banana / Imagen)",
+    "title": "Synthetic Data Factory (Omni / Nano Banana / Imagen / Veo)",
     "product_tag": "Agent Platform",
     "domain": "sim_to_real_synthetic",
     "domain_display": "Sim-to-Real & Synthetic Data Pipeline",
     "domain_icon": "\ud83c\udf10",
-    "description": "3-step agentic workflow to create edge-case training data: generate images/video with Veo, Nano Banana 2 and Imagen 4 (optionally Genie 3 or NVIDIA Cosmos world models), auto-label on Agent Platform for detection, segmentation and depth, then feed, train and test the robot.",
-    "kpis": ["Edge-case Coverage Uplift: +60%", "Time to Training-ready Data: minutes", "Manual Tagging Required: 0%"],
-    "prompts": ["Generate 500 images of transparent cups under low kitchen lighting.", "Create a video of a robot arm folding a towel from a top-down view.", "Auto-label the generated set with bounding boxes and depth."],
+    "description": "Agentic synthetic data & domain-randomization pipeline: expands 1 reference scene into 8+ lighting/weather/surface variations with Nano Banana 2 & Imagen 4 (SceneVar AI) or multi-turn video augmentations with Gemini Omni 1.2 Flash & Veo 3.1, auto-annotates detection/segmentation/depth on Agent Platform, and exports training-ready VLA datasets.",
+    "kpis": ["Edge-case Coverage Uplift: +60%", "Scene Variations per Photo: 8+ instant", "Manual Tagging Required: 0%"],
+    "prompts": ["Generate 8 lighting, weather, and surface variations from this single street/warehouse camera frame while locking 3D scene geometry.", "Transform a robot trajectory recorded on a hardwood floor onto wet tile and low-light clutter using Gemini Omni.", "Auto-label the generated synthetic set with 2D bounding boxes, segmentation masks, and depth."],
     "tables": [],
-    "stack": ["Agent Platform", "Veo 3", "Nano Banana 2", "Imagen 4", "Genie 3", "Gemini"],
+    "stack": ["Gemini Omni 1.2 Flash", "Nano Banana 2", "Imagen 4", "Veo 3.1", "Gemini Enterprise Agent Platform"],
     "location": "us-central1",
     "demo_mp4": "demos/agent-platform/synthetic_data_factory.mp4",
-    "demo_html": "https://robotic-prompt-generator-811235746107.us-central1.run.app/",
-    "source_slides": "Deck slide 36 (Veo AMR Videos) & 38"
+    "demo_html": "https://scenevar-ai-242017771503.us-central1.run.app/",
+    "extra_links": [
+      { "label": "Prompt Gen", "url": "https://robotic-prompt-generator-811235746107.us-central1.run.app/" }
+    ],
+    "source_slides": "Deck slides 35-42 & SceneVar AI 2.0"
   },
   {
     "name": "multimodal_robot_vector_search",
@@ -1783,6 +1867,10 @@
             <a href="${a.demo_html}" class="btn-showcase" target="_blank" rel="noopener noreferrer">
               <span>⚡</span> ${a.demo_html.includes('run.app') ? 'Live Demo' : (a.demo_html.startsWith('http') ? 'Case / Link' : (a.demo_mp4 ? 'Walkthrough' : 'Live Demo'))}
             </a>` : ''}
+            ${(a.extra_links && a.extra_links.length) ? a.extra_links.map(l => `
+            <a href="${l.url}" class="btn-showcase" target="_blank" rel="noopener noreferrer">
+              <span>⚡</span> ${l.label}
+            </a>`).join('') : ''}
             ${a.readme ? `
             <a href="${a.readme}" class="btn-doc" title="View Documentation">
               <span>📖</span>
@@ -1917,6 +2005,11 @@
       modalAgentDesc.textContent = agent.description;
       if (agent.demo_html) {
         modalWalkthroughLink.href = agent.demo_html;
+        modalWalkthroughLink.innerHTML = agent.demo_html.includes('run.app')
+          ? '<span>⚡</span> Open Live Demo'
+          : (agent.demo_html.startsWith('http')
+              ? '<span>⚡</span> Open Official Case / Blog'
+              : '<span>⚡</span> Open Interactive Walkthrough');
         modalWalkthroughLink.style.display = 'inline-flex';
       } else {
         modalWalkthroughLink.style.display = 'none';

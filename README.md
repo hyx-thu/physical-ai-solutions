@@ -11,28 +11,31 @@ Each agent and solution answers operational, scientific, and engineering questio
 > 💡 **Tip**: Click on any section accordion below to collapse/expand its deployed solution roster, links, product tags, and KPI focus.
 
 <details open>
-<summary><b>🧩 Agent Platform, Data, Model & AI Infra Solutions (15 Catalog Entries)</b></summary>
+<summary><b>🧩 Agent Platform, Data, Model & AI Infra Solutions (18 Catalog Entries)</b></summary>
 <br/>
 
-> **Source**: *Great Opportunities for South Korea in Physical AI* deck — "Google Cloud a key stack for Physical AI" pillars (Interaction, AI Agent & Apps, Auto Label, Data Curation, Training, Simulation, Synth Data Gen, Robotic Model / On-Device).
+> **Source**: *Google Cloud Physical AI Narrative 2026* — "Google Cloud a key stack for Physical AI" 9 pillars (Interaction, AI Agent & Apps, Auto Label / Video Reasoning, Synth Data Gen, Data Curation, Training, Simulation, Robotic Model / On-Device, and Self Iteration).
 
 | No. | Product | Solution | Domain | Core Stack | Demo / Slides |
 | :--- | :---: | :--- | :--- | :--- | :---: |
-| 1 | `Agent Platform` | **Gemini Live Interaction** | 🗣️ Human-Robot Interaction | Gemini Live API, Vertex AI RAG Engine, Multimodal Embeddings, Agent Engine | [🎬 Unitree Live Demo](demos/agent-platform/gemini_live_interaction.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-3.8-live" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (15–17, 21) |
-| 2 | `Model` | **Gemini Robotics ER Model** | 🤖 Robot Foundation Models & Edge | Gemini Robotics ER 2 / Gemini Robotics 2 | [🎬 Slide 81 Video](demos/model/gemini_robotics_er_model.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-robotics-er-2-streaming-preview" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (74–81) |
-| 3 | `Agent Platform` | **Robotics Auto-Labeling** | 🏷️ Auto-Labeling & Data Curation | Gemini Flash, Batch Prediction, GCS, BigQuery | [🎬 Auto-Label + JSON Demo](demos/agent-platform/robotics_auto_labeling.mp4) (23, 24, 26) |
-| 4 | `Agent Platform` | **Self-tuning Agent for Auto-Labeling** | 🏷️ Auto-Labeling & Data Curation | ADK, Gemini, Agent Platform Evaluation | [🖼️ Slides P25 / P26](demos/screenshots/slide_25.png) (25, 26) |
-| 5 | `AI Infra` | **Real2Sim Reconstruction & 500Hz Dexterous Twin** | 🌐 Sim-to-Real & Synthetic | Gemini 4 Argon, MuJoCo / MJWarp, MuJoCo WASM, MediaPipe, Cloud Run | [🎬 4 Real2Sim Videos](demos/model/real2sim_human_view.mp4) / <a href="https://real2sim-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (Argon 6–9) |
-| 6 | `Agent Platform` | **Robot Skills & Action Agent** | 🗣️ Human-Robot Interaction | ADK, Agent Engine, Connectors | [⚡ Case / Link](https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/) (11, 16, 18, 79) |
-| 7 | `Agent Platform` | **Multi-View VLA Validation Judge** | 🔬 Policy Evaluation | Gemini, Agent Engine | [🖼️ Slides P29 / P30](demos/screenshots/slide_29.png) (29–30) |
-| 8 | `Agent Platform` | **Synthetic Data Factory (Veo / Nano Banana / Imagen)** | 🌐 Sim-to-Real & Synthetic | Agent Platform, Veo 3, Nano Banana 2, Imagen 4, Genie 3 | [🎬 Slide 36 Veo AMR Video](demos/agent-platform/synthetic_data_factory.mp4) / <a href="https://robotic-prompt-generator-811235746107.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> (32–39) |
-| 9 | `Data` | **Multimodal Robot Data Vector Search** | 🏷️ Auto-Labeling & Data Curation | gemini-embedding-2, Vector Search | [🎬 VectorSearch Demo](demos/data/multimodal_robot_vector_search.mp4) (44–45) |
-| 10 | `Data` | **Smart Storage Auto-Annotate + BigQuery Insights** | 🏷️ Auto-Labeling & Data Curation | GCS Auto Annotate, Storage Insights, BigQuery | [🖼️ Slide P51](demos/screenshots/slide_51.png) (51) |
-| 11 | `Data` | **Robot Data Flywheel Platform** | ⚙️ Fleet Telemetry | Pub/Sub, Dataflow, BigQuery, Cloud Storage, Looker | [🎬 Demo Video](demos/data/robot_data_flywheel_platform.mp4) (43, 52, 101, 118) |
-| 12 | `Data` | **GCP Smart Vision (Edge Video to Semantic Alerts)** | 🏷️ Auto-Labeling & Data Curation | Gemma/Tiny-Gemma, Gemini, Vector Search, Cloud Run | [🖼️ Slide P49 Screenshot](demos/screenshots/slide_49.png) (47–50) |
-| 13 | `Model` | **Gemma 4 On-Device Multilingual Robot Brain** | 🤖 Robot Foundation Models & Edge | Gemma 4, Gemma 3n, GDC Edge, Coral | [🖼️ Slides P71 / P73](demos/screenshots/slide_71.png) / [⚡ Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) (71, 73) |
-| 14 | `AI Infra` | **Scalable Physics Simulation (MuJoCo / Isaac Sim)** | 🌐 Sim-to-Real & Synthetic | MuJoCo MJX / MJWarp, NVIDIA Isaac Sim, G4 VMs, GKE, TPU | [🎬 Genie 3 Sim Demo](demos/ai-infra/scalable_physics_simulation.mp4) (55–58, 66, 112) |
-| 15 | `AI Infra` | **Embodied AI & RL Model Training** | 🤖 Robot Foundation Models & Edge | AI Hypercomputer (GPU/TPU), Vertex AI Training, GKE + DWS, Isaac Lab RL | [🖼️ Slides P61 / P60](demos/screenshots/slide_61.png) (60–61, 66) |
+| 1 | `Agent Platform` | **Gemini Live Interaction** | 🗣️ Human-Robot Interaction | Gemini 3.8 Live, Agent Search & Hybrid RAG, Multimodal Embeddings, Agent Runtime | [🎬 Unitree Live Demo](demos/agent-platform/gemini_live_interaction.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-3.8-live" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> |
+| 2 | `Model` | **Gemini Robotics 2 & ER 2 Model** | 🤖 Robot Foundation Models & Edge | Gemini Robotics ER 2, Gemini Robotics 2, Gemini Robotics On-Device 2 | [🎬 Spot Demo Video](demos/model/gemini_robotics_er_model.mp4) / <a href="https://gemini-robotic-er2-242017771503.us-central1.run.app/?model=gemini-robotics-er-2-streaming-preview" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> |
+| 3 | `Agent Platform` | **Robotics Video Reasoning & Auto-Labeling** | 🏷️ Auto-Labeling & Data Curation | Gemini 4 Argon, Gemini 4 Hydrogen / 3.8 Flash, Batch & Deferred Tier, GCS, BigQuery | [🎬 4 Video Demos (Seg + ALOHA Hindsight + 3-View Value Fn)](demos/agent-platform/robotics_auto_labeling.mp4) / <a href="https://robotic-auto-label-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> |
+| 4 | `Agent Platform` | **Self-tuning Agent for Auto-Labeling** | 🏷️ Auto-Labeling & Data Curation | ADK, Gemini 4 Argon, Gemini 3.8 Flash, Agent Platform Evals | [🎬 4 Walkthrough Videos (Auto-Train + Eval Rounds + Leaderboard)](demos/agent-platform/selftune_auto_train_flow.mp4) |
+| 5 | `AI Infra` | **Real2Sim Reconstruction & 500Hz Dexterous Twin** | 🌐 Sim-to-Real & Synthetic | Gemini 4 Argon, MuJoCo / MJWarp, MuJoCo WASM, MediaPipe, Cloud Run | [🎬 4 Real2Sim Videos](demos/model/real2sim_human_view.mp4) / <a href="https://real2sim-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Live Demo</a> |
+| 6 | `Model` | **Autonomous Robot Self-Improvement & Agentic Research** | 🤖 Robot Foundation Models & Edge | Gemini 4 Argon, Gemini Robotics 2.5, MuJoCo / MJWarp, MuJoCo WASM | [🎬 3 Self-Improvement Videos (56%→75% VLA, SO-101 3x, Paper WASM)](demos/model/self_improve_sim_vla_75.mp4) / <a href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank" rel="noopener noreferrer">⚡ Blog</a> |
+| 7 | `AI Infra` | **Genie 4 & Gemini Omni World Model Simulation** | 🌐 Sim-to-Real & Synthetic | Genie 4, Gemini Omni 1.2 Flash, Gemini 4 Argon, Gemini 3.8 Flash, Interactions API | [🎬 5 Genie 4 × Omni Demos](demos/ai-infra/genie4_ur5_pipetting.mp4) / <a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener noreferrer">⚡ Blog</a> |
+| 8 | `Model` | **Zero-Shot & Closed-Loop Robot Control** | 🤖 Robot Foundation Models & Edge | Gemini 4 Argon, Gemini Omni 1.2 Flash, MuJoCo, ADK | [🎬 3 Closed-Loop Control Videos](demos/model/control_spot_pedal_bin.mp4) / <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/" target="_blank" rel="noopener noreferrer">⚡ Blog</a> |
+| 9 | `Agent Platform` | **Robot Skills & Action Agent** | 🗣️ Human-Robot Interaction | ADK, Agent Runtime, Connectors | [⚡ Case / Link](https://bostondynamics.com/blog/tools-for-your-to-do-list-with-spot-and-gemini-robotics/) |
+| 10 | `Agent Platform` | **Multi-View VLA Validation Judge** | 🔬 Policy Evaluation | Gemini 4 Hydrogen / Argon, Agent Runtime | [🖼️ Slides P29 / P30](demos/screenshots/slide_29.png) |
+| 11 | `Agent Platform` | **Synthetic Data Factory (Omni / Nano Banana / Imagen / Veo)** | 🌐 Sim-to-Real & Synthetic | Gemini Omni 1.2 Flash, Nano Banana 2, Imagen 4, Veo 3.1 | [🎬 Synthetic Video](demos/agent-platform/synthetic_data_factory.mp4) / <a href="https://scenevar-ai-242017771503.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ SceneVar Live</a> / <a href="https://robotic-prompt-generator-811235746107.us-central1.run.app/" target="_blank" rel="noopener noreferrer">⚡ Prompt Gen</a> |
+| 12 | `Data` | **Multimodal Robot Data Vector Search** | 🏷️ Auto-Labeling & Data Curation | gemini-embedding-2, Vector Search | [🎬 VectorSearch Demo](demos/data/multimodal_robot_vector_search.mp4) |
+| 13 | `Data` | **Smart Storage Auto-Annotate + BigQuery Insights** | 🏷️ Auto-Labeling & Data Curation | GCS Auto Annotate, Storage Insights, BigQuery | [🖼️ Slide P51](demos/screenshots/slide_51.png) |
+| 14 | `Data` | **Robot Data Flywheel Platform** | ⚙️ Fleet Telemetry | Pub/Sub, Dataflow, BigQuery, Cloud Storage, Looker | [🎬 Demo Video](demos/data/robot_data_flywheel_platform.mp4) |
+| 15 | `Data` | **GCP Smart Vision (Edge Video to Semantic Alerts)** | 🏷️ Auto-Labeling & Data Curation | Gemma/Tiny-Gemma, Gemini, Vector Search, Cloud Run | [🖼️ Slide P49 Screenshot](demos/screenshots/slide_49.png) |
+| 16 | `Model` | **Gemma 4 On-Device Multilingual Robot Brain** | 🤖 Robot Foundation Models & Edge | Gemma 4, Gemma 3n, GDC Edge, Coral | [🖼️ Slides P71 / P73](demos/screenshots/slide_71.png) / [⚡ Gemma 4](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/) |
+| 17 | `AI Infra` | **Scalable Physics Simulation (MuJoCo / Isaac Sim)** | 🌐 Sim-to-Real & Synthetic | MuJoCo MJX / MJWarp, NVIDIA Isaac Sim, G4 VMs, GKE, TPU | [🎬 Sim Demo](demos/ai-infra/scalable_physics_simulation.mp4) |
+| 18 | `AI Infra` | **Embodied AI & RL Model Training** | 🤖 Robot Foundation Models & Edge | AI Hypercomputer (GPU/TPU), Agent Platform Training, GKE + DWS, Isaac Lab RL | [🖼️ Slides P61 / P60](demos/screenshots/slide_61.png) |
 
 </details>
 
@@ -44,7 +47,7 @@ Each agent and solution answers operational, scientific, and engineering questio
 
 | No. | Product | Agent / Solution | Demo | Focus of Solution |
 | :--- | :---: | :--- | :---: | :--- |
-| 15 | `Gemini Enterprise` | [Data Collection & Annotation Ops Intelligence](domains/robot_data_ops/agents/data_collection_annotation_ops/README.md) | <a href="demos/gemini-enterprise/robot_data_ops/data_collection_annotation_ops.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Robotics data ops intelligence connecting Cloud Storage/BigQuery data lakes to monitor teleop hours, annotation stages, and QA verification velocity. |
+| 19 | `Gemini Enterprise` | [Data Collection & Annotation Ops Intelligence](domains/robot_data_ops/agents/data_collection_annotation_ops/README.md) | <a href="demos/gemini-enterprise/robot_data_ops/data_collection_annotation_ops.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Robotics data ops intelligence connecting Cloud Storage/BigQuery data lakes to monitor teleop hours, annotation stages, and QA verification velocity. |
 
 </details>
 
@@ -56,7 +59,7 @@ Each agent and solution answers operational, scientific, and engineering questio
 
 | No. | Product | Agent / Solution | Demo | Focus of Solution |
 | :--- | :---: | :--- | :---: | :--- |
-| 16 | `Gemini Enterprise` | [Multimodal Evaluation & Failure Root Cause Analysis](domains/policy_eval_diagnostics/agents/multimodal_eval_failure_diagnostics/README.md) | <a href="demos/gemini-enterprise/policy_eval_diagnostics/multimodal_eval_failure_diagnostics.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Multimodal reasoning over evaluation rollout videos, metric tables, and run logs to diagnose edge-case failures and retrieve exact error segments. |
+| 20 | `Gemini Enterprise` | [Multimodal Evaluation & Failure Root Cause Analysis](domains/policy_eval_diagnostics/agents/multimodal_eval_failure_diagnostics/README.md) | <a href="demos/gemini-enterprise/policy_eval_diagnostics/multimodal_eval_failure_diagnostics.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Multimodal reasoning over evaluation rollout videos, metric tables, and run logs to diagnose edge-case failures and retrieve exact error segments. |
 
 </details>
 
@@ -68,7 +71,7 @@ Each agent and solution answers operational, scientific, and engineering questio
 
 | No. | Product | Agent / Solution | Demo | Focus of Solution |
 | :--- | :---: | :--- | :---: | :--- |
-| 17 | `Gemini Enterprise` | [Synthetic Scene & Edge-Case Curation Copilot](domains/sim_to_real_synthetic/agents/synthetic_scene_curation_copilot/README.md) | <a href="demos/gemini-enterprise/sim_to_real_synthetic/synthetic_scene_curation_copilot.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Bridges real-world failure logs with 3D simulation asset repositories to translate edge cases into domain randomization parameters for low-data regimes. |
+| 21 | `Gemini Enterprise` | [Synthetic Scene & Edge-Case Curation Copilot](domains/sim_to_real_synthetic/agents/synthetic_scene_curation_copilot/README.md) | <a href="demos/gemini-enterprise/sim_to_real_synthetic/synthetic_scene_curation_copilot.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Bridges real-world failure logs with 3D simulation asset repositories to translate edge cases into domain randomization parameters for low-data regimes. |
 
 </details>
 
@@ -80,7 +83,7 @@ Each agent and solution answers operational, scientific, and engineering questio
 
 | No. | Product | Agent / Solution | Demo | Focus of Solution |
 | :--- | :---: | :--- | :---: | :--- |
-| 18 | `Gemini Enterprise` | [Fleet Diagnostics & Hardware Maintenance Assistant](domains/fleet_telemetry_maintenance/agents/fleet_diagnostics_hardware_maintenance/README.md) | <a href="demos/gemini-enterprise/fleet_telemetry_maintenance/fleet_diagnostics_hardware_maintenance.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Grounds Gemini Enterprise on joint telemetry, error codes, and repair SOPs to troubleshoot anomalies and guide field hardware maintenance. |
+| 22 | `Gemini Enterprise` | [Fleet Diagnostics & Hardware Maintenance Assistant](domains/fleet_telemetry_maintenance/agents/fleet_diagnostics_hardware_maintenance/README.md) | <a href="demos/gemini-enterprise/fleet_telemetry_maintenance/fleet_diagnostics_hardware_maintenance.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Grounds Gemini Enterprise on joint telemetry, error codes, and repair SOPs to troubleshoot anomalies and guide field hardware maintenance. |
 
 </details>
 
@@ -92,7 +95,7 @@ Each agent and solution answers operational, scientific, and engineering questio
 
 | No. | Product | Agent / Solution | Demo | Focus of Solution |
 | :--- | :---: | :--- | :---: | :--- |
-| 19 | `Gemini Enterprise` | [Embodied AI Safety Audit & Release Readiness Agent](domains/safety_compliance_release/agents/embodied_ai_safety_audit/README.md) | <a href="demos/gemini-enterprise/safety_compliance_release/embodied_ai_safety_audit.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Integrates benchmark evaluations and ISO/OSHA robotic safety standards to generate safety audit summaries before weights are flashed to edge hardware. |
+| 23 | `Gemini Enterprise` | [Embodied AI Safety Audit & Release Readiness Agent](domains/safety_compliance_release/agents/embodied_ai_safety_audit/README.md) | <a href="demos/gemini-enterprise/safety_compliance_release/embodied_ai_safety_audit.html" target="_blank" rel="noopener noreferrer">🎬 Demo</a> | Integrates benchmark evaluations and ISO/OSHA robotic safety standards to generate safety audit summaries before weights are flashed to edge hardware. |
 
 </details>
 
@@ -103,7 +106,7 @@ Each agent and solution answers operational, scientific, and engineering questio
 ```mermaid
 graph TD
     User["Robotics Operations / Policy Engineer"] -->|Natural Language Prompt| GE["Gemini Enterprise Assistant"]
-    GE -->|Routes to Agent| Root["Root Orchestrator LlmAgent<br/>(gemini-3.5-flash)"]
+    GE -->|Routes to Agent| Root["Root Orchestrator LlmAgent<br/>(gemini-4-hydrogen / gemini-3.8-flash)"]
     
     Root -->|Lifecycle Callback| CB1["tools.callbacks.set_current_date"]
     
